@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Юля Pro">
+<meta name="theme-color" content="#0f0f1a">
+<title>Юля Тренінг</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{--gold:#C9A84C;--gold-l:#F0D080;--gold-p:rgba(201,168,76,0.12);--blue:#2563eb;--blue-l:rgba(37,99,235,0.12);--bg:#0f0f1a;--bg2:#1a1a2e;--bg3:#252540;--bg4:#2d2d4e;--txt:#f0f0ff;--txt2:#9090bb;--txt3:#5a5a7a;--brd:rgba(255,255,255,0.08);--brd2:rgba(255,255,255,0.15);--green:#22c55e;--red:#ef4444;--amber:#f59e0b;--r:14px;--rs:10px;--rp:24px}
+html,body{height:100%;overflow:hidden;background:#0f0f1a}
+body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;color:var(--txt);font-size:15px}
+.app{max-width:430px;margin:0 auto;height:100vh;display:flex;flex-direction:column;background:var(--bg)}
+.hdr{background:linear-gradient(160deg,#0f0f1a,#1a1a3e 60%,#1e2060);padding:16px 16px 0;flex-shrink:0}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.hdr-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-l));display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#1a1a2e}
+.hdr-lbl{font-size:10px;letter-spacing:.1em;color:rgba(255,255,255,.4);text-transform:uppercase;margin-left:7px}
+.hdr-brand{display:flex;align-items:center}
+.hdr-act{display:flex;gap:8px}
+.hdr-btn{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer}
+.hdr-name{font-size:22px;font-weight:700;color:#fff;margin-bottom:4px}
+.hdr-name span{color:var(--gold-l)}
+.hdr-meta{display:flex;gap:8px;margin-bottom:12px}
+.badge{font-size:10px;color:rgba(255,255,255,.4);background:rgba(255,255,255,.07);padding:3px 10px;border-radius:var(--rp);border:1px solid var(--brd)}
+.badge.gold{color:var(--gold);background:var(--gold-p);border-color:rgba(201,168,76,.3)}
+.tabs{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-shrink:0}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0;padding:10px 16px;font-size:12px;font-weight:500;color:var(--txt3);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s}
+.tab.on{color:var(--gold-l);border-bottom-color:var(--gold)}
+.scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:14px 14px 100px;background:var(--bg)}
+.lbl{font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--txt3);text-transform:uppercase;margin:16px 0 8px 2px}
+.lbl:first-child{margin-top:0}
+.card{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);padding:14px 16px;margin-bottom:10px}
+.card-g{border-left:2px solid var(--gold)}
+.ex{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);padding:14px;margin-bottom:10px;transition:border-color .3s}
+.ex.xdone{border-color:rgba(34,197,94,.4);background:rgba(34,197,94,.03)}
+.ex-nr{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.ex-n{font-size:10px;color:var(--txt3);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.ex-dl{font-size:11px;font-weight:700;color:var(--green)}
+.ex-pl{font-size:11px;font-weight:700;color:var(--amber)}
+.ex-ua{font-size:15px;font-weight:700;color:var(--txt);line-height:1.3}
+.ex-ru{font-size:11px;color:var(--txt3);margin-top:2px}
+.ex-mu{font-size:11px;color:var(--txt2);margin-top:3px}
+.ex-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.tag{font-size:10px;background:var(--bg3);border:1px solid var(--brd);border-radius:var(--rp);padding:3px 9px;color:var(--txt2)}
+.tag.g{color:var(--gold);background:var(--gold-p);border-color:rgba(201,168,76,.2)}
+.tag.rest{color:#22c55e;background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.25)}
+.yt{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:#60a5fa;margin-top:8px;cursor:pointer;background:rgba(37,99,235,.1);padding:5px 12px;border-radius:var(--rp);border:1px solid rgba(37,99,235,.2);text-decoration:none}
+.sets-sec{margin-top:12px;padding-top:12px;border-top:1px solid var(--brd)}
+.sets-lbl{font-size:11px;color:var(--txt3);margin-bottom:8px}
+.sets-row{display:flex;gap:8px;flex-wrap:wrap}
+.sb{width:44px;height:44px;border-radius:50%;border:2px solid var(--brd2);background:var(--bg3);font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--txt2);flex-shrink:0;transition:all .15s;-webkit-appearance:none;outline:none}
+.sb.done{background:var(--blue);border-color:var(--blue);color:#fff}
+.sb.fail{background:rgba(239,68,68,.12);border-color:var(--red);color:var(--red)}
+.cr{display:flex;gap:8px;margin-top:12px}
+.cb{flex:1;background:var(--bg3);border-radius:var(--rs);padding:10px 12px;border:1px solid var(--brd)}
+.cl{font-size:10px;color:var(--txt3);margin-bottom:8px;font-weight:500;text-transform:uppercase;letter-spacing:.05em}
+.ci{display:flex;align-items:center;justify-content:space-between;gap:4px}
+.cm{width:32px;height:32px;border-radius:50%;border:1px solid var(--brd2);background:var(--bg4);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--txt);flex-shrink:0;-webkit-appearance:none;outline:none}
+.cv{font-size:17px;font-weight:700;color:var(--txt);text-align:center;flex:1}
+.feel-row{display:flex;gap:4px}
+.fb{flex:1;padding:10px 2px;border-radius:var(--rs);border:1px solid var(--brd);background:var(--bg3);text-align:center;cursor:pointer;transition:all .2s}
+.fb.on{border-color:var(--blue);background:rgba(37,99,235,.15)}
+.fi{font-size:22px;display:block}
+.fl{font-size:9px;color:var(--txt3);margin-top:3px;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{padding:8px 14px;border-radius:var(--rp);border:1px solid var(--brd2);background:var(--bg3);font-size:13px;cursor:pointer;color:var(--txt2);transition:all .2s}
+.chip.on{background:var(--blue);border-color:var(--blue);color:#fff}
+textarea{width:100%;border:1px solid var(--brd2);border-radius:var(--rs);padding:12px;font-size:14px;color:var(--txt);background:var(--bg3);resize:none;font-family:inherit;line-height:1.6;outline:none;-webkit-appearance:none}
+textarea::placeholder{color:var(--txt3)}
+.bnr{display:flex;align-items:center;justify-content:center;gap:20px;padding:8px 0}
+.bb{width:48px;height:48px;border-radius:50%;border:1px solid var(--brd2);background:var(--bg3);font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--txt);-webkit-appearance:none;outline:none}
+.bv{font-size:40px;font-weight:700;color:var(--txt);min-width:90px;text-align:center}
+.bu{font-size:14px;color:var(--txt2);align-self:flex-end;padding-bottom:8px}
+.wd{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--brd)}
+.wd:last-child{border-bottom:none}
+.wi{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.wid{background:rgba(34,197,94,.12)}
+.wip{background:rgba(245,158,11,.12)}
+.win{background:var(--bg3)}
+.wn{flex:1}
+.wname{font-size:14px;font-weight:600;color:var(--txt)}
+.wsub{font-size:11px;color:var(--txt2);margin-top:2px}
+.wpct{font-size:14px;font-weight:700;color:var(--blue)}
+.pb{height:3px;background:var(--bg3);border-radius:2px;margin-top:5px}
+.pf{height:100%;background:var(--blue);border-radius:2px}
+.sl{margin-bottom:14px}
+.slh{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.sln{font-size:14px;color:var(--txt)}
+.slv{font-size:20px;font-weight:700;color:var(--gold)}
+input[type=range]{width:100%;-webkit-appearance:none;height:4px;background:var(--bg4);border-radius:2px;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--gold);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--gold);cursor:pointer;border:none}
+.btn-g{width:100%;padding:16px;background:linear-gradient(135deg,var(--gold),var(--gold-l));color:#1a1a2e;border:none;border-radius:var(--r);font-size:15px;font-weight:700;cursor:pointer;margin-top:10px;-webkit-appearance:none;outline:none}
+.btn-b{width:100%;padding:14px;background:var(--blue);color:#fff;border:none;border-radius:var(--r);font-size:14px;font-weight:600;cursor:pointer;margin-top:8px;-webkit-appearance:none;outline:none}
+.btn-o{width:100%;padding:13px;background:none;color:var(--txt2);border:1px solid var(--brd2);border-radius:var(--r);font-size:14px;cursor:pointer;margin-top:8px;-webkit-appearance:none;outline:none}
+.btn-tg{display:flex;align-items:center;justify-content:center;gap:8px;flex:1;padding:14px;background:#229ED9;color:#fff;border:none;border-radius:var(--r);font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;-webkit-appearance:none;outline:none}
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:8px;flex:1;padding:14px;background:#25D366;color:#fff;border:none;border-radius:var(--r);font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;-webkit-appearance:none;outline:none}
+.send-r{display:flex;gap:8px;margin-top:10px}
+.tov{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.88);z-index:999;display:flex;align-items:center;justify-content:center}
+.tbox{background:var(--bg2);border:1px solid var(--brd2);border-radius:24px;padding:28px 32px;text-align:center;width:290px}
+.tlbl{font-size:11px;color:var(--txt3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+.tex{font-size:13px;color:var(--txt2);margin-bottom:6px;font-weight:600}
+.tsnd-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px}
+.tsnd-lbl{font-size:11px;color:var(--txt3)}
+.tsnd-tog{width:40px;height:22px;background:var(--bg3);border-radius:11px;cursor:pointer;position:relative;border:1px solid var(--brd2);transition:background .2s;flex-shrink:0}
+.tsnd-tog.on{background:var(--green)}
+.tsnd-tog::after{content:'';position:absolute;width:16px;height:16px;border-radius:50%;background:#fff;top:2px;left:2px;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.tsnd-tog.on::after{left:20px}
+.tring{width:130px;height:130px;margin:0 auto 16px;position:relative}
+.tring svg{position:absolute;top:0;left:0;width:130px;height:130px;transform:rotate(-90deg)}
+.tring circle{fill:none;stroke-width:3}
+.tbg{stroke:rgba(255,255,255,.05)}
+.tarc{stroke:var(--gold);stroke-linecap:round;transition:stroke-dashoffset 1s linear}
+.tinn{position:absolute;top:0;left:0;width:130px;height:130px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.tnum{font-size:38px;font-weight:700;color:var(--txt)}
+.tunit{font-size:10px;color:var(--txt3);margin-top:-3px}
+.tmsg{font-size:12px;color:var(--txt2);margin-bottom:14px}
+.tskip{padding:10px 22px;background:var(--bg3);border:1px solid var(--brd2);border-radius:var(--rp);font-size:13px;color:var(--txt2);cursor:pointer;-webkit-appearance:none;outline:none}
+.rh{background:linear-gradient(145deg,#0f0f1a,#1a1a3e);padding:24px 18px 18px;text-align:center}
+.rcheck{font-size:44px;margin-bottom:6px}
+.rtitle{font-size:18px;font-weight:700;color:#fff}
+.rsub{font-size:11px;color:rgba(255,255,255,.4);margin-top:3px}
+.rbody{padding:14px}
+.rbox{background:var(--bg2);border-radius:var(--r);padding:12px;font-size:11px;line-height:1.9;color:var(--txt2);white-space:pre-wrap;border:1px solid var(--brd);font-family:monospace;max-height:38vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.cmsg{text-align:center;font-size:12px;color:var(--green);margin-top:6px;height:20px;font-weight:600}
+.tc{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);padding:14px;margin-bottom:10px}
+.tt{font-size:14px;font-weight:700;color:var(--txt);margin-bottom:10px}
+.ts{display:flex;gap:8px;margin-bottom:10px}
+.tsb{flex:1;background:var(--bg3);border-radius:var(--rs);padding:8px;text-align:center}
+.tsv{font-size:17px;font-weight:700;color:var(--gold)}
+.tsl{font-size:10px;color:var(--txt3);margin-top:2px}
+.ter{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--brd);font-size:12px}
+.ter:last-child{border-bottom:none}
+.ten{color:var(--txt2);flex:1}
+.tev{color:var(--txt);font-weight:600;margin-left:8px}
+/* INFO BLOCK */
+.info-section{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);padding:14px;margin-bottom:10px}
+.info-title{font-size:13px;font-weight:700;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.info-row{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--brd)}
+.info-row:last-child{border-bottom:none}
+.info-key{font-size:12px;font-weight:700;color:var(--gold);min-width:70px;flex-shrink:0}
+.info-val{font-size:12px;color:var(--txt2);line-height:1.5;flex:1}
+.info-example{font-size:11px;color:var(--txt3);margin-top:3px}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="hdr">
+  <div class="hdr-top">
+    <div class="hdr-brand"><div class="hdr-av">Ю</div><span class="hdr-lbl">Персональний тренінг</span></div>
+    <div class="hdr-act"><div class="hdr-btn" onclick="goT()">👁</div></div>
+  </div>
+  <div class="hdr-name">Щоденник <span>Юлі</span></div>
+  <div class="hdr-meta"><div class="badge gold">Тиждень 8</div><div class="badge">Квітень 2026</div></div>
+  <div class="tabs" id="tabs">
+    <div class="tab on" onclick="sw('tue',0)">💪 Вівторок</div>
+    <div class="tab" onclick="sw('thu',1)">🍑 Четвер</div>
+    <div class="tab" onclick="sw('fri',2)">🔄 Пятниця</div>
+    <div class="tab" onclick="sw('sun',3)">🎾 Неділя</div>
+    <div class="tab" onclick="sw('week',4)">📊 Тиждень</div>
+    <div class="tab" onclick="sw('info',5)">ℹ️ Інфо</div>
+  </div>
+</div>
+<div class="scroll" id="main"></div>
+</div>
+
+<div id="tov" class="tov" style="display:none">
+  <div class="tbox">
+    <div class="tlbl">ВІДПОЧИНОК</div>
+    <div class="tex" id="tex"></div>
+    <div class="tsnd-row">
+      <span class="tsnd-lbl">Звук</span>
+      <div class="tsnd-tog on" id="snd-tog" onclick="toggleSound()"></div>
+    </div>
+    <div class="tring">
+      <svg viewBox="0 0 130 130"><circle class="tbg" cx="65" cy="65" r="60"/><circle class="tarc" id="tarc" cx="65" cy="65" r="60" stroke-dasharray="377" stroke-dashoffset="0"/></svg>
+      <div class="tinn"><div class="tnum" id="tnum">90</div><div class="tunit">сек</div></div>
+    </div>
+    <div class="tmsg" id="tmsg">Відпочивай 💪</div>
+    <button class="tskip" onclick="skipT()">Пропустити →</button>
+  </div>
+</div>
+
+<script>
+var W=8;
+var soundOn=true;
+var S={d:{},wk:{en:7,sl:7,st:5,mu:5,w:85.0,mood:''},cur:'tue',rt:''};
+var EX={
+tue:[
+{n:1,ua:'Підтягування (Гравітрон)',ru:'Assisted Pull-up',mu:'Широчайші, біцепс, задня дельта',s:3,r:'6-8',ri:'1-2',tm:'2-0-2',rs:90,rbe:120,hw:true,dw:30,yt:'https://www.youtube.com/results?search_query=assisted+pull+up+proper+form'},
+{n:2,ua:'Жим гантелей лежачи',ru:'Dumbbell Chest Press',mu:'Грудні, передня дельта, трицепс',s:3,r:'8-10',ri:'1-2',tm:'2-0-2',rs:90,rbe:120,hw:true,dw:14,yt:'https://www.youtube.com/results?search_query=dumbbell+chest+press'},
+{n:3,ua:'Тяга однією рукою',ru:'Single Arm Row',mu:'Широчайші, ромбоподібні',s:3,r:'10',ri:'1-2',tm:'2-0-2',rs:75,rbe:90,hw:true,dw:16,yt:'https://www.youtube.com/results?search_query=single+arm+dumbbell+row'},
+{n:4,ua:'Зворотні розведення',ru:'Reverse Pec Deck',mu:'Задня дельта, верх спини',s:3,r:'12-14',ri:'1-2',tm:'2-0-2',rs:60,rbe:90,hw:true,dw:20,yt:'https://www.youtube.com/results?search_query=reverse+pec+deck'},
+{n:5,ua:'Розведення в кросовері',ru:'Cable Lateral Raise',mu:'Середня дельта',s:3,r:'12-15',ri:'1-2',tm:'2-0-2',rs:60,rbe:90,hw:true,dw:6,yt:'https://www.youtube.com/results?search_query=cable+lateral+raise'},
+{n:6,ua:'Підйом колін у висі',ru:'Hanging Knee Raise',mu:'Прес',s:2,r:'12',ri:'2-3',tm:'2-0-2',rs:45,rbe:60,hw:false,dw:0,yt:'https://www.youtube.com/results?search_query=hanging+knee+raise'},
+{n:7,ua:'Планка',ru:'Plank',mu:'Кор, стабілізація',s:2,r:'45-60 сек',ri:'2-3',tm:'—',rs:45,rbe:60,hw:false,dw:0,yt:'https://www.youtube.com/results?search_query=plank+exercise+proper+form'}
+],
+thu:[
+{n:1,ua:'Румунська тяга',ru:'Romanian Deadlift',mu:'Сідниці, задня поверхня стегна',s:4,r:'8-10',ri:'1-2',tm:'2-1-2',rs:90,rbe:120,hw:true,dw:40,yt:'https://www.youtube.com/results?search_query=romanian+deadlift+proper+form'},
+{n:2,ua:'Тяга стегна (Hip Thrust)',ru:'Hip Thrust',mu:'Сідниці — головний акцент',s:4,r:'10-12',ri:'1-2',tm:'2-1-2',rs:75,rbe:120,hw:true,dw:60,yt:'https://www.youtube.com/results?search_query=hip+thrust+proper+form'},
+{n:3,ua:'Жим ногами',ru:'Leg Press висока постановка',mu:'Сідниці + задня поверхня стегна',s:3,r:'10-12',ri:'1-2',tm:'2-0-2',rs:75,rbe:90,hw:true,dw:80,yt:'https://www.youtube.com/results?search_query=leg+press+proper+form'},
+{n:4,ua:'Відведення ноги назад',ru:'Cable Kickback',mu:'Сідниці — ізоляція',s:3,r:'12-15',ri:'1-2',tm:'2-0-2',rs:60,rbe:90,hw:true,dw:15,yt:'https://www.youtube.com/results?search_query=cable+kickback'},
+{n:5,ua:'Згинання ніг',ru:'Leg Curl',mu:'Задня поверхня стегна',s:3,r:'12',ri:'1-2',tm:'2-0-2',rs:60,rbe:90,hw:true,dw:25,yt:'https://www.youtube.com/results?search_query=leg+curl'},
+{n:6,ua:'Спуск зі степа',ru:'Step-down',mu:'Стабілізатори коліна',s:2,r:'8',ri:'2',tm:'3-0-2',rs:60,rbe:90,hw:false,dw:0,yt:'https://www.youtube.com/results?search_query=step+down+exercise'}
+],
+fri:[
+{n:1,ua:'Тяга блоку згори',ru:'Lat Pulldown',mu:'Широчайші, біцепс',s:3,r:'8-10',ri:'1-2',tm:'2-0-2',rs:90,rbe:120,hw:true,dw:35,yt:'https://www.youtube.com/results?search_query=lat+pulldown+proper+form'},
+{n:2,ua:'Жим Арнольда',ru:'Arnold Press',mu:'Передня + середня дельта',s:3,r:'10',ri:'1-2',tm:'2-0-2',rs:90,rbe:120,hw:true,dw:10,yt:'https://www.youtube.com/results?search_query=arnold+press'},
+{n:3,ua:'Тяга сидячи',ru:'Seated Row',mu:'Спина, ромбоподібні',s:3,r:'10',ri:'1-2',tm:'2-0-2',rs:90,rbe:120,hw:true,dw:30,yt:'https://www.youtube.com/results?search_query=seated+row+machine+proper+form'},
+{n:4,ua:'Тяга до обличчя',ru:'Face Pull',mu:'Задня дельта, верх спини',s:3,r:'12',ri:'1-2',tm:'2-0-2',rs:60,rbe:90,hw:true,dw:15,yt:'https://www.youtube.com/results?search_query=face+pull+proper+form'},
+{n:5,ua:'Підйом гантелей',ru:'Lateral Raise',mu:'Середня дельта',s:3,r:'12-15',ri:'1-2',tm:'2-0-2',rs:60,rbe:90,hw:true,dw:6,yt:'https://www.youtube.com/results?search_query=dumbbell+lateral+raise'},
+{n:6,ua:'Мертвий жук',ru:'Dead Bug',mu:'Глибокі мязи кору',s:2,r:'12',ri:'2-3',tm:'2-0-2',rs:45,rbe:60,hw:false,dw:0,yt:'https://www.youtube.com/results?search_query=dead+bug+exercise'},
+{n:7,ua:'Планка',ru:'Plank',mu:'Кор, стабілізація',s:2,r:'45-60 сек',ri:'2-3',tm:'—',rs:45,rbe:60,hw:false,dw:0,yt:'https://www.youtube.com/results?search_query=plank+exercise+proper+form'}
+],
+sun:[{n:1,ua:'Теніс',ru:'Tennis',mu:'Кардіо, координація',s:1,r:'60 хв',ri:'—',tm:'—',rs:0,rbe:0,hw:false,dw:0,yt:''}]
+};
+var DN={tue:{ua:'Вівторок — Верх тіла',ic:'💪'},thu:{ua:'Четвер — Ноги / Сідниці',ic:'🍑'},fri:{ua:'Пятниця — Верх тіла',ic:'🔄'},sun:{ua:'Неділя — Теніс',ic:'🎾'}};
+
+function save(){try{localStorage.setItem('y8v3',JSON.stringify({d:S.d,wk:S.wk}));}catch(e){}}
+function load(){try{var r=localStorage.getItem('y8v3');if(r){var p=JSON.parse(r);if(p.d)S.d=p.d;if(p.wk)S.wk=p.wk;}}catch(e){}}
+function iDay(day){
+  if(S.d[day])return;
+  var ex=EX[day]||[];
+  var o={feel:'',pain:'Немає',note:'',sets:{},w:{},reps:{}};
+  ex.forEach(function(e,i){o.sets[i]=[];for(var s=0;s<e.s;s++)o.sets[i].push('');o.w[i]=e.dw;o.reps[i]=e.r;});
+  S.d[day]=o;
+}
+
+var tI=null,tTot=90,tLeft=90,CIRC=2*Math.PI*60;
+
+function playBeep(){
+  if(!soundOn)return;
+  try{
+    var ctx=new(window.AudioContext||window.webkitAudioContext)();
+    var osc=ctx.createOscillator();
+    var gain=ctx.createGain();
+    osc.connect(gain);gain.connect(ctx.destination);
+    osc.frequency.value=880;
+    gain.gain.setValueAtTime(0.4,ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.5);
+    osc.start(ctx.currentTime);osc.stop(ctx.currentTime+0.5);
+    setTimeout(function(){
+      var osc2=ctx.createOscillator();var gain2=ctx.createGain();
+      osc2.connect(gain2);gain2.connect(ctx.destination);
+      osc2.frequency.value=1100;
+      gain2.gain.setValueAtTime(0.4,ctx.currentTime);
+      gain2.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.6);
+      osc2.start(ctx.currentTime);osc2.stop(ctx.currentTime+0.6);
+    },400);
+  }catch(e){}
+}
+
+function toggleSound(){
+  soundOn=!soundOn;
+  document.getElementById('snd-tog').classList.toggle('on',soundOn);
+}
+
+function startT(secs,name){
+  tTot=secs;tLeft=secs;
+  document.getElementById('tex').textContent=name;
+  document.getElementById('tov').style.display='flex';
+  document.getElementById('snd-tog').classList.toggle('on',soundOn);
+  updT();
+  if(tI)clearInterval(tI);
+  tI=setInterval(function(){
+    tLeft--;updT();
+    if(tLeft<=0){
+      clearInterval(tI);
+      document.getElementById('tnum').textContent='✓';
+      document.getElementById('tmsg').textContent='Готово! Наступний підхід 🔥';
+      playBeep();
+      try{if(navigator.vibrate)navigator.vibrate([200,100,200,100,400]);}catch(e){}
+      setTimeout(function(){document.getElementById('tov').style.display='none';},2000);
+    }
+  },1000);
+}
+
+function updT(){
+  document.getElementById('tnum').textContent=tLeft;
+  var off=CIRC-(CIRC*(tLeft/tTot));
+  document.getElementById('tarc').style.strokeDashoffset=off;
+  document.getElementById('tmsg').textContent=tLeft>tTot*.6?'Відпочивай 💪':tLeft>tTot*.3?'Майже готова! 🔥':'Ще трохи...';
+}
+function skipT(){if(tI)clearInterval(tI);document.getElementById('tov').style.display='none';}
+function today(){var d=new Date();return d.getDate()+'.'+(d.getMonth()+1)+'.'+d.getFullYear();}
+
+function sw(day,idx){
+  document.querySelectorAll('.tab').forEach(function(t,i){t.classList.toggle('on',i===idx);});
+  S.cur=day;
+  if(day==='week')rWeek();
+  else if(day==='info')rInfo();
+  else rDay(day);
+}
+function goT(){rTrainer();document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on');});}
+
+function rDay(day){
+  iDay(day);
+  var d=S.d[day],ex=EX[day]||[],dn=DN[day];
+  var h='<div class="lbl">'+dn.ic+' '+dn.ua+'</div>';
+  ex.forEach(function(e,i){
+    var sets=d.sets[i]||[];
+    var done=sets.filter(function(s){return s==='done';}).length;
+    var all=done===sets.length&&sets.length>0,any=done>0;
+    var sl=all?'<span class="ex-dl">✓ Виконано</span>':any?'<span class="ex-pl">~ В процесі</span>':'';
+    var btns='';
+    for(var s=0;s<e.s;s++){
+      var st=sets[s];
+      btns+='<button class="sb'+(st==='done'?' done':st==='fail'?' fail':'')+'" id="sb-'+day+'-'+i+'-'+s+'" onclick="tapS(\''+day+'\','+i+','+s+','+e.rs+',\''+e.ua.replace(/'/g,'`')+'\')">'+( s+1)+'</button>';
+    }
+    var wC=e.hw?'<div class="cb"><div class="cl">Вага (кг)</div><div class="ci"><button class="cm" onclick="chV(\'w\',\''+day+'\','+i+',-2.5)">-</button><div class="cv" id="wv-'+day+'-'+i+'">'+d.w[i]+'</div><button class="cm" onclick="chV(\'w\',\''+day+'\','+i+',2.5)">+</button></div></div>':'<div style="flex:1"></div>';
+    var rv=typeof d.reps[i]==='number'?d.reps[i]:(parseFloat(d.reps[i])||1);
+    var yt=e.yt?'<a class="yt" href="'+e.yt+'" target="_blank" rel="noopener">▶ Техніка</a>':'';
+    var restTag=e.rs>0?'<span class="tag rest">Відп між підх: '+e.rs+' сек</span>':'';
+    var restBetween=e.rbe>0?'<span class="tag rest">Відп між впр: '+e.rbe+' сек</span>':'';
+    h+='<div class="ex'+(all?' xdone':'')+'" id="exb-'+day+'-'+i+'">';
+    h+='<div class="ex-nr"><div class="ex-n">Вправа '+e.n+'</div>'+sl+'</div>';
+    h+='<div class="ex-ua">'+e.ua+'</div><div class="ex-ru">'+e.ru+'</div><div class="ex-mu">'+e.mu+'</div>';
+    h+='<div class="ex-tags"><span class="tag">'+e.s+'×'+e.r+'</span><span class="tag">RIR '+e.ri+'</span><span class="tag g">'+e.tm+'</span>'+restTag+restBetween+'</div>';
+    h+=yt;
+    h+='<div class="sets-sec"><div class="sets-lbl">Підходи (тап = ✓ виконано, ще раз = ✗):</div><div class="sets-row">'+btns+'</div></div>';
+    h+='<div class="cr">'+wC+'<div class="cb"><div class="cl">Повторень</div><div class="ci"><button class="cm" onclick="chV(\'r\',\''+day+'\','+i+',-1)">-</button><div class="cv" id="rv-'+day+'-'+i+'">'+rv+'</div><button class="cm" onclick="chV(\'r\',\''+day+'\','+i+',1)">+</button></div></div></div>';
+    h+='</div>';
+  });
+  h+='<div class="lbl">Як почувалась?</div><div class="card"><div class="feel-row" id="fl-'+day+'">';
+  [['😴','Погано'],['😕','Так собі'],['😐','Норм'],['🙂','Добре'],['💪','Відмінно']].forEach(function(f){
+    var a=d.feel===f[0]+' '+f[1]?' on':'';
+    h+='<div class="fb'+a+'" onclick="pFeel(\''+day+'\',\''+f[0]+' '+f[1]+'\',this)"><span class="fi">'+f[0]+'</span><span class="fl">'+f[1]+'</span></div>';
+  });
+  h+='</div></div>';
+  h+='<div class="lbl">Біль або дискомфорт?</div><div class="card"><div class="chips">';
+  ['Немає','Коліна','Попереку','Плечі','Інше'].forEach(function(p){
+    h+='<div class="chip'+(d.pain===p?' on':'')+'" onclick="pChip(\''+day+'\',\''+p+'\',this)">'+p+'</div>';
+  });
+  h+='</div></div>';
+  h+='<div class="lbl">Нотатки для тренера</div><div class="card"><textarea id="nt-'+day+'" rows="3" placeholder="Запитання, зауваження..." oninput="S.d[\''+day+'\'].note=this.value;save()">'+d.note+'</textarea></div>';
+  document.getElementById('main').innerHTML=h;
+}
+
+function tapS(day,i,s,rs,name){
+  var d=S.d[day];
+  var cur=d.sets[i][s];
+  var nxt=cur===''?'done':cur==='done'?'fail':'';
+  d.sets[i][s]=nxt;
+  var btn=document.getElementById('sb-'+day+'-'+i+'-'+s);
+  if(btn)btn.className='sb'+(nxt==='done'?' done':nxt==='fail'?' fail':'');
+  var all=d.sets[i].every(function(x){return x==='done';});
+  var bl=document.getElementById('exb-'+day+'-'+i);
+  if(bl)bl.classList.toggle('xdone',all);
+  save();
+  if(nxt==='done'&&rs>0)startT(rs,name);
+  try{if(navigator.vibrate)navigator.vibrate(nxt==='done'?[40]:nxt==='fail'?[80,40,80]:[20]);}catch(e){}
+}
+
+function chV(tp,day,i,delta){
+  var d=S.d[day];
+  if(tp==='w'){d.w[i]=Math.max(0,Math.round((d.w[i]+delta)*2)/2);var el=document.getElementById('wv-'+day+'-'+i);if(el)el.textContent=d.w[i];}
+  else{var c=typeof d.reps[i]==='number'?d.reps[i]:(parseFloat(d.reps[i])||1);d.reps[i]=Math.max(1,c+delta);var el2=document.getElementById('rv-'+day+'-'+i);if(el2)el2.textContent=d.reps[i];}
+  save();
+}
+function pFeel(day,val,el){S.d[day].feel=val;document.getElementById('fl-'+day).querySelectorAll('.fb').forEach(function(b){b.classList.remove('on');});el.classList.add('on');save();}
+function pChip(day,val,el){S.d[day].pain=val;el.parentNode.querySelectorAll('.chip').forEach(function(c){c.classList.remove('on');});el.classList.add('on');save();}
+
+function rWeek(){
+  var days=['tue','thu','fri','sun'];
+  var h='<div class="lbl">Підсумок тренувань</div><div class="card">';
+  days.forEach(function(day){
+    iDay(day);
+    var d=S.d[day],ex=EX[day]||[],dn=DN[day];
+    var tot=0,done=0;
+    ex.forEach(function(e,i){if(d.sets[i])d.sets[i].forEach(function(s){tot++;if(s==='done')done++;});});
+    var pct=tot>0?Math.round(done/tot*100):0;
+    var ic=pct>=80?'✅':pct>0?'⚡':'—';
+    var cls=pct>=80?'wid':pct>0?'wip':'win';
+    h+='<div class="wd"><div class="wi '+cls+'">'+ic+'</div><div class="wn"><div class="wname">'+dn.ic+' '+dn.ua+'</div><div class="wsub">'+done+'/'+tot+' підходів'+(d.feel?' · '+d.feel:'')+'</div><div class="pb"><div class="pf" style="width:'+pct+'%"></div></div></div><div class="wpct">'+pct+'%</div></div>';
+  });
+  h+='</div>';
+  h+='<div class="lbl">Вага (кг)</div><div class="card card-g"><div class="bnr"><button class="bb" onclick="chW(-0.5)">-</button><div class="bv" id="ww-v">'+S.wk.w.toFixed(1)+'</div><span class="bu">кг</span><button class="bb" onclick="chW(0.5)">+</button></div></div>';
+  h+='<div class="lbl">Самопочуття (1-10)</div><div class="card">';
+  [['en','⚡ Енергія'],['sl','😴 Сон'],['st','🌊 Стрес'],['mu','💥 Втома']].forEach(function(r){
+    h+='<div class="sl"><div class="slh"><span class="sln">'+r[1]+'</span><span class="slv" id="'+r[0]+'-v">'+S.wk[r[0]]+'</span></div><input type="range" min="1" max="10" step="1" value="'+S.wk[r[0]]+'" oninput="S.wk[\''+r[0]+'\']=+this.value;document.getElementById(\''+r[0]+'-v\').textContent=this.value;save()"></div>';
+  });
+  h+='</div>';
+  h+='<div class="lbl">Настрій тижня</div><div class="card"><div class="feel-row" id="mood-r">';
+  [['😞','Погано'],['😕','Так собі'],['😐','Норм'],['🙂','Добре'],['😄','Чудово']].forEach(function(f){
+    var a=S.wk.mood===f[0]+' '+f[1]?' on':'';
+    h+='<div class="fb'+a+'" onclick="pMood(\''+f[0]+' '+f[1]+'\',this)"><span class="fi">'+f[0]+'</span><span class="fl">'+f[1]+'</span></div>';
+  });
+  h+='</div></div>';
+  h+='<button class="btn-g" onclick="genW()">Сформувати тижневий звіт</button>';
+  document.getElementById('main').innerHTML=h;
+}
+
+function chW(d){S.wk.w=Math.max(40,Math.round((S.wk.w+d)*10)/10);var el=document.getElementById('ww-v');if(el)el.textContent=S.wk.w.toFixed(1);save();}
+function pMood(val,el){S.wk.mood=val;document.getElementById('mood-r').querySelectorAll('.fb').forEach(function(b){b.classList.remove('on');});el.classList.add('on');save();}
+
+function rInfo(){
+  var h='<div class="lbl">Як читати програму</div>';
+  h+='<div class="info-section">';
+  h+='<div class="info-title">🎯 RIR — запас повторів</div>';
+  h+='<div class="info-row"><div class="info-key">RIR 0</div><div class="info-val">Повна відмова — більше жодного повтору зробити неможливо<div class="info-example">Максимальне зусилля</div></div></div>';
+  h+='<div class="info-row"><div class="info-key">RIR 1</div><div class="info-val">Залишився 1 повтор в запасі — зупинись тут<div class="info-example">Дуже важко, але ще 1 раз міг би</div></div></div>';
+  h+='<div class="info-row"><div class="info-key">RIR 2</div><div class="info-val">Залишилось 2 повтори в запасі<div class="info-example">Важко, але міг би ще 2 рази</div></div></div>';
+  h+='<div class="info-row"><div class="info-key">RIR 3</div><div class="info-val">Залишилось 3 повтори в запасі<div class="info-example">Помірне зусилля</div></div></div>';
+  h+='</div>';
+
+  h+='<div class="info-section">';
+  h+='<div class="info-title">⏱ Темп виконання</div>';
+  h+='<div class="info-row"><div class="info-key">2-0-2</div><div class="info-val">2 сек опускання → 0 сек пауза → 2 сек підйом<div class="info-example">Присідання: 2 сек вниз, одразу 2 сек вгору</div></div></div>';
+  h+='<div class="info-row"><div class="info-key">2-1-2</div><div class="info-val">2 сек опускання → 1 сек пауза → 2 сек підйом<div class="info-example">Hip Thrust: 2 сек вниз, 1 сек затримка вгорі, 2 сек вниз</div></div></div>';
+  h+='<div class="info-row"><div class="info-key">3-0-2</div><div class="info-val">3 сек опускання → 0 пауза → 2 сек підйом<div class="info-example">Step-down: повільно вниз — контроль коліна</div></div></div>';
+  h+='</div>';
+
+  h+='<div class="info-section">';
+  h+='<div class="info-title">🟢 Відпочинок</div>';
+  h+='<div class="info-row"><div class="info-key">Між підходами</div><div class="info-val">Час відпочинку після кожного підходу одного упражнения. Таймер запускається автоматично.<div class="info-example">90 сек для базових, 60 сек для ізоляції</div></div></div>';
+  h+='<div class="info-row"><div class="info-key">Між вправами</div><div class="info-val">Час відпочинку після останнього підходу перед переходом до наступної вправи.<div class="info-example">90-120 сек для базових вправ</div></div></div>';
+  h+='</div>';
+
+  h+='<div class="info-section">';
+  h+='<div class="info-title">💪 Підходи та повторення</div>';
+  h+='<div class="info-row"><div class="info-key">3×8-10</div><div class="info-val">3 підходи по 8-10 повторень<div class="info-example">Роби 3 підходи, в кожному від 8 до 10 разів</div></div></div>';
+  h+='<div class="info-row"><div class="info-key">4×10-12</div><div class="info-val">4 підходи по 10-12 повторень<div class="info-example">Hip Thrust — 4 підходи з паузою вгорі</div></div></div>';
+  h+='<div class="info-row"><div class="info-key">Тап на кнопку</div><div class="info-val">Синя = виконано ✓, Червона = не вийшло ✗, Ще раз = скинути</div></div>';
+  h+='</div>';
+
+  h+='<div class="info-section">';
+  h+='<div class="info-title">🫁 Дихання</div>';
+  h+='<div class="info-row"><div class="info-key">Вдих</div><div class="info-val">Фаза опускання (негативна фаза)<div class="info-example">Опускаєшся — вдихаєш</div></div></div>';
+  h+='<div class="info-row"><div class="info-key">Видих</div><div class="info-val">Фаза підйому (позитивна фаза)<div class="info-example">Піднімаєшся — видихаєш</div></div></div>';
+  h+='</div>';
+
+  document.getElementById('main').innerHTML=h;
+}
+
+function genW(){
+  var days=['tue','thu','fri','sun'];
+  var t='ТИЖНЕВИЙ ЗВІТ — ЮЛЯ\n━━━━━━━━━━━━━━━━━\n';
+  t+='Дата: '+today()+' | Тиждень '+W+'\n\n';
+  t+='ТРЕНУВАННЯ:\n';
+  days.forEach(function(day){
+    iDay(day);
+    var d=S.d[day],ex=EX[day]||[],dn=DN[day];
+    var tot=0,done=0;
+    ex.forEach(function(e,i){if(d.sets[i])d.sets[i].forEach(function(s){tot++;if(s==='done')done++;});});
+    var pct=tot>0?Math.round(done/tot*100):0;
+    t+=dn.ic+' '+dn.ua+': '+done+'/'+tot+' ('+pct+'%)'+(d.feel?' · '+d.feel:'')+'\n';
+    ex.forEach(function(e,i){if(!e.hw)return;var dn2=d.sets[i]?d.sets[i].filter(function(s){return s==='done';}).length:0;t+='   '+e.ua+': '+d.w[i]+' кг | '+dn2+'/'+e.s+'\n';});
+    if(d.pain&&d.pain!=='Немає')t+='   Біль: '+d.pain+'\n';
+    if(d.note)t+='   Нотатки: '+d.note+'\n';
+    t+='\n';
+  });
+  var wk=S.wk;
+  t+='Вага: '+wk.w.toFixed(1)+' кг\n';
+  t+='Енергія: '+wk.en+'/10 | Сон: '+wk.sl+'/10 | Стрес: '+wk.st+'/10\n';
+  t+='Настрій: '+(wk.mood||'—')+'\n━━━━━━━━━━━━━━━━━\nЩоденник Юлі · Тиждень '+W;
+  showRep(t,'week');
+}
+
+function showRep(txt,tp){
+  S.rt=tp;
+  var tg='https://t.me/share/url?url=&text='+encodeURIComponent(txt);
+  var wa='https://wa.me/?text='+encodeURIComponent(txt);
+  var h='<div class="rh"><div class="rcheck">✅</div><div class="rtitle">Звіт готовий!</div><div class="rsub">Надішли тренеру</div></div>';
+  h+='<div class="rbody"><div class="rbox" id="rtxt">'+esc(txt)+'</div><div class="cmsg" id="cmsg"></div>';
+  h+='<div class="send-r"><a class="btn-tg" href="'+tg+'" target="_blank" rel="noopener">Telegram</a><a class="btn-wa" href="'+wa+'" target="_blank" rel="noopener">WhatsApp</a></div>';
+  h+='<button class="btn-b" onclick="doCopy()">Скопіювати текст</button>';
+  h+='<button class="btn-o" onclick="goBack()">← Назад</button></div>';
+  document.getElementById('main').innerHTML=h;
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on');});
+}
+
+function doCopy(){
+  var txt=document.getElementById('rtxt').textContent;
+  var msg=document.getElementById('cmsg');
+  function ok(){msg.textContent='✅ Скопійовано!';setTimeout(function(){msg.textContent='';},2500);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok).catch(function(){fb2(txt,ok);});}else fb2(txt,ok);
+}
+function fb2(txt,cb){var ta=document.createElement('textarea');ta.value=txt;ta.style.cssText='position:fixed;opacity:0;top:0';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);cb();}
+
+function goBack(){
+  var d=S.rt==='week'?'week':S.rt==='info'?'info':S.cur;
+  var idx={tue:0,thu:1,fri:2,sun:3,week:4,info:5}[d]||0;
+  document.querySelectorAll('.tab').forEach(function(t,i){t.classList.toggle('on',i===idx);});
+  if(d==='week')rWeek();else if(d==='info')rInfo();else rDay(d);
+}
+
+function rTrainer(){
+  var days=['tue','thu','fri','sun'];
+  var h='<div class="lbl">Панель тренера — Тиждень '+W+'</div>';
+  days.forEach(function(day){
+    iDay(day);
+    var d=S.d[day],ex=EX[day]||[],dn=DN[day];
+    var tot=0,done=0;
+    ex.forEach(function(e,i){if(d.sets[i])d.sets[i].forEach(function(s){tot++;if(s==='done')done++;});});
+    var pct=tot>0?Math.round(done/tot*100):0;
+    h+='<div class="tc"><div class="tt">'+dn.ic+' '+dn.ua+'</div>';
+    h+='<div class="ts"><div class="tsb"><div class="tsv">'+pct+'%</div><div class="tsl">Виконання</div></div>';
+    h+='<div class="tsb"><div class="tsv">'+(d.feel?d.feel.split(' ')[0]:'—')+'</div><div class="tsl">Самопочуття</div></div>';
+    h+='<div class="tsb"><div class="tsv">'+done+'/'+tot+'</div><div class="tsl">Підходів</div></div></div>';
+    ex.forEach(function(e,i){
+      if(!e.hw)return;
+      var dn2=d.sets[i]?d.sets[i].filter(function(s){return s==='done';}).length:0;
+      h+='<div class="ter"><span class="ten">'+e.ua+'</span><span class="tev">'+d.w[i]+' кг · '+dn2+'/'+e.s+'</span></div>';
+    });
+    if(d.pain&&d.pain!=='Немає')h+='<div style="margin-top:8px;font-size:12px;color:var(--red)">Біль: '+d.pain+'</div>';
+    if(d.note)h+='<div style="margin-top:6px;font-size:12px;color:var(--txt2)">'+d.note+'</div>';
+    h+='</div>';
+  });
+  h+='<button class="btn-g" onclick="genW()">Тижневий звіт</button>';
+  document.getElementById('main').innerHTML=h;
+}
+
+function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+load();rDay('tue');
+</script>
+</body>
+</html>
