@@ -1,0 +1,2527 @@
+<!DOCTYPE html>
+<html lang="uk"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0e0e12">
+<title>Щоденник Юлі</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("d125189c-71d1-4cdb-9299-ee680c864d2f") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("af7693c6-c009-427f-83f6-83f2d43735d5") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("2d22f0d8-94e8-4c3f-8684-2068bed7f84c") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("605d627a-c300-4d52-a3cb-6d5c6282d10a") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("802e0764-797a-4441-b3a5-e79467bb5904") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fef1e8e1-7937-47eb-bef2-2d4f9cbac05a") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("d125189c-71d1-4cdb-9299-ee680c864d2f") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("af7693c6-c009-427f-83f6-83f2d43735d5") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("2d22f0d8-94e8-4c3f-8684-2068bed7f84c") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("605d627a-c300-4d52-a3cb-6d5c6282d10a") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("802e0764-797a-4441-b3a5-e79467bb5904") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fef1e8e1-7937-47eb-bef2-2d4f9cbac05a") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("e1c4d1f0-ba2e-45b0-b5d1-086df7fb6c05") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("ed6698b9-0ce9-45bf-9e1f-89bd4801ffb2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("620d910b-4e89-4ef2-b76e-8180b45084fb") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("4495556a-4b71-4b58-9b37-5daaea838518") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("28e2194d-1c70-4b31-ad79-e022b158ee70") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("e1c4d1f0-ba2e-45b0-b5d1-086df7fb6c05") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("ed6698b9-0ce9-45bf-9e1f-89bd4801ffb2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("620d910b-4e89-4ef2-b76e-8180b45084fb") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("4495556a-4b71-4b58-9b37-5daaea838518") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("28e2194d-1c70-4b31-ad79-e022b158ee70") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("e1c4d1f0-ba2e-45b0-b5d1-086df7fb6c05") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("ed6698b9-0ce9-45bf-9e1f-89bd4801ffb2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("620d910b-4e89-4ef2-b76e-8180b45084fb") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("4495556a-4b71-4b58-9b37-5daaea838518") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("28e2194d-1c70-4b31-ad79-e022b158ee70") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("e1c4d1f0-ba2e-45b0-b5d1-086df7fb6c05") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("ed6698b9-0ce9-45bf-9e1f-89bd4801ffb2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("620d910b-4e89-4ef2-b76e-8180b45084fb") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("4495556a-4b71-4b58-9b37-5daaea838518") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("28e2194d-1c70-4b31-ad79-e022b158ee70") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("e1c4d1f0-ba2e-45b0-b5d1-086df7fb6c05") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("ed6698b9-0ce9-45bf-9e1f-89bd4801ffb2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("620d910b-4e89-4ef2-b76e-8180b45084fb") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("4495556a-4b71-4b58-9b37-5daaea838518") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("28e2194d-1c70-4b31-ad79-e022b158ee70") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("38636f71-bca7-473e-8eb2-31d3be1c6b73") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("2b39281b-b7db-4900-9fd4-915083f4eaa5") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("df21b420-5460-4fec-9501-f320dbc6b944") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("4b80e433-2d5e-4b34-9cb6-1cc3d843cac8") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("d4c60ce5-d8de-4020-8eb9-3e1f334fe94a") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("38636f71-bca7-473e-8eb2-31d3be1c6b73") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("2b39281b-b7db-4900-9fd4-915083f4eaa5") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("df21b420-5460-4fec-9501-f320dbc6b944") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("4b80e433-2d5e-4b34-9cb6-1cc3d843cac8") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("d4c60ce5-d8de-4020-8eb9-3e1f334fe94a") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("38636f71-bca7-473e-8eb2-31d3be1c6b73") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("2b39281b-b7db-4900-9fd4-915083f4eaa5") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("df21b420-5460-4fec-9501-f320dbc6b944") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("4b80e433-2d5e-4b34-9cb6-1cc3d843cac8") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("d4c60ce5-d8de-4020-8eb9-3e1f334fe94a") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("38636f71-bca7-473e-8eb2-31d3be1c6b73") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("2b39281b-b7db-4900-9fd4-915083f4eaa5") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("df21b420-5460-4fec-9501-f320dbc6b944") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("4b80e433-2d5e-4b34-9cb6-1cc3d843cac8") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("d4c60ce5-d8de-4020-8eb9-3e1f334fe94a") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+
+:root{
+  /* Palette — strict, from spec */
+  --bg:#0e0e12;
+  --c1:#16161e;
+  --c2:#1c1c26;
+  --c3:#24242f;
+
+  --t1:#f0f0f0;
+  --t2:#888;
+  --t3:#5a5a64;
+  --t4:#3a3a44;
+
+  --line:rgba(255,255,255,0.07);
+  --line-2:rgba(255,255,255,0.10);
+
+  --lime:#c9f53b;
+  --blue:#7b8cff;
+  --red:#ff6b6b;
+
+  --lime-soft:rgba(201,245,59,0.10);
+  --lime-glow:rgba(201,245,59,0.18);
+  --blue-soft:rgba(123,140,255,0.10);
+  --red-soft:rgba(255,107,107,0.10);
+
+  --r:18px;
+  --ease:cubic-bezier(.22,.8,.22,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+
+  --safe-top:env(safe-area-inset-top,0px);
+  --safe-bot:env(safe-area-inset-bottom,0px);
+}
+
+html,body{height:100%;overflow:hidden;background:#000}
+body{
+  font-family:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;
+  color:var(--t1);
+  font-size:14px;
+  font-weight:400;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.dpy{font-family:'Oswald','Montserrat',sans-serif;font-weight:500;letter-spacing:0.01em}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+
+/* Desktop stage */
+.stage{
+  position:fixed;inset:0;
+  background:radial-gradient(80% 60% at 50% 30%, #0a0a0e, #000 70%);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.stage::before{
+  content:'';position:absolute;
+  top:50%;left:50%;width:560px;height:760px;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(50% 50% at 50% 50%, rgba(201,245,59,0.04), transparent 70%);
+  pointer-events:none;
+}
+
+.app{
+  width:100%;max-width:420px;
+  height:100vh;max-height:100vh;
+  display:flex;flex-direction:column;
+  background:var(--bg);
+  position:relative;overflow:hidden;
+  opacity:0;transform:translateY(8px);
+  transition:opacity .55s var(--ease-out), transform .55s var(--ease-out);
+}
+.app.ready{opacity:1;transform:none}
+@media(min-width:520px){
+  .app{
+    height:min(900px,calc(100vh - 40px));
+    border-radius:32px;
+    box-shadow:0 0 0 1px var(--line),0 60px 120px -30px rgba(0,0,0,0.9);
+  }
+}
+
+/* SPLASH */
+.splash{
+  position:absolute;inset:0;z-index:50;
+  background:var(--bg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:24px;transition:opacity .5s var(--ease-out);
+}
+.splash.hide{opacity:0;pointer-events:none}
+.splash::before{
+  content:'';position:absolute;
+  top:50%;left:50%;width:300px;height:300px;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(50% 50% at 50% 50%, var(--lime-glow), transparent 70%);
+  animation:pulse 2.4s var(--ease) infinite;
+}
+@keyframes pulse{
+  0%,100%{opacity:0.4;transform:translate(-50%,-50%) scale(0.92)}
+  50%{opacity:1;transform:translate(-50%,-50%) scale(1.05)}
+}
+.splash-mark{
+  position:relative;width:60px;height:60px;border-radius:50%;
+  background:linear-gradient(135deg,#22222d,#16161e);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Oswald',sans-serif;font-weight:500;font-size:26px;
+  color:var(--lime);
+  box-shadow:inset 0 0 0 1px rgba(201,245,59,0.3),0 12px 32px -10px var(--lime-glow);
+}
+.splash-txt{
+  position:relative;
+  font-size:11px;letter-spacing:0.24em;
+  color:var(--t2);text-transform:uppercase;font-weight:500;
+  animation:shimmer 2.4s var(--ease) infinite;
+}
+@keyframes shimmer{0%,100%{opacity:0.4}50%{opacity:1}}
+
+/* HEADER */
+.hdr{
+  position:relative;z-index:2;
+  padding:calc(24px + var(--safe-top)) 28px 0;
+  flex-shrink:0;
+}
+.hdr-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px}
+.hdr-mark-wrap{display:flex;align-items:center;gap:12px}
+.hdr-mark{
+  width:36px;height:36px;border-radius:50%;
+  background:linear-gradient(135deg,#22222d,#16161e);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Oswald',sans-serif;font-weight:500;font-size:18px;color:var(--lime);
+  box-shadow:inset 0 0 0 1px var(--line-2);
+}
+.hdr-tag{
+  font-size:9px;font-weight:600;letter-spacing:0.22em;
+  color:var(--t3);text-transform:uppercase;
+}
+.hdr-eye{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--c1);display:flex;align-items:center;justify-content:center;
+  cursor:pointer;color:var(--t2);font-size:14px;
+  transition:transform .2s var(--ease), color .2s, background .2s;
+}
+.hdr-eye:hover{background:var(--c2);color:var(--t1)}
+.hdr-eye:active{transform:scale(0.94)}
+
+.hdr-title{
+  font-family:'Oswald',sans-serif;font-weight:500;
+  font-size:46px;letter-spacing:0.005em;
+  color:var(--t1);line-height:1;
+  margin-bottom:14px;
+}
+.hdr-title em{font-style:normal;color:var(--lime)}
+.hdr-meta{
+  display:flex;align-items:center;gap:14px;
+  font-size:11px;color:var(--t3);
+  letter-spacing:0.04em;margin-bottom:24px;
+}
+.hdr-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--t4)}
+.hdr-meta .wk{color:var(--lime);font-weight:600;letter-spacing:0.06em}
+
+/* TABS */
+.tabs{
+  position:relative;z-index:2;
+  display:flex;overflow-x:auto;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;
+  flex-shrink:0;padding:0 28px;gap:28px;
+  border-bottom:1px solid var(--line);
+}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  flex-shrink:0;padding:0 0 16px;
+  font-size:12px;font-weight:600;
+  color:var(--t3);cursor:pointer;
+  position:relative;white-space:nowrap;
+  transition:color .25s var(--ease);
+  letter-spacing:0.04em;text-transform:uppercase;
+}
+.tab::after{
+  content:'';position:absolute;
+  left:50%;bottom:-1px;width:0;height:2px;
+  background:var(--lime);border-radius:2px;
+  transform:translateX(-50%);
+  transition:width .3s var(--ease);
+  box-shadow:0 0 12px var(--lime-glow);
+}
+.tab.on{color:var(--t1)}
+.tab.on::after{width:24px}
+
+/* SCROLL */
+.scroll{
+  position:relative;z-index:1;
+  flex:1;overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  padding:32px 22px calc(120px + var(--safe-bot));
+}
+.scroll > *{animation:fadeUp .5s var(--ease-out) both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* EYEBROW */
+.eyb{
+  font-size:10px;font-weight:600;
+  letter-spacing:0.2em;color:var(--t2);
+  text-transform:uppercase;
+  padding:0 8px;margin:36px 0 14px;
+}
+.eyb:first-child{margin-top:0}
+
+/* HERO */
+.hero{
+  background:linear-gradient(180deg,var(--c2),var(--c1));
+  border-radius:var(--r);
+  padding:28px 26px 24px;margin-bottom:18px;
+  position:relative;overflow:hidden;
+  box-shadow:0 1px 0 rgba(255,255,255,0.04) inset, 0 20px 50px -20px rgba(0,0,0,0.6);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(120% 80% at 80% 0%, rgba(201,245,59,0.06), transparent 60%);
+  pointer-events:none;
+}
+.hero-row{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  position:relative;z-index:1;margin-bottom:28px;gap:20px;
+}
+.hero-l .hero-eyb{
+  font-size:10px;font-weight:600;letter-spacing:0.22em;
+  color:var(--lime);text-transform:uppercase;margin-bottom:8px;
+}
+.hero-l .hero-name{
+  font-family:'Oswald',sans-serif;font-weight:500;font-size:30px;
+  letter-spacing:0.005em;color:var(--t1);
+  line-height:1;
+}
+.hero-stat{text-align:right}
+.hero-stat .v{
+  font-family:'Oswald',sans-serif;font-weight:500;font-size:54px;
+  letter-spacing:0;color:var(--t1);line-height:0.9;
+}
+.hero-stat .v em{font-style:normal;color:var(--t2);font-size:22px;font-weight:400;margin-left:2px}
+.hero-stat .l{
+  font-size:10px;letter-spacing:0.2em;
+  color:var(--t3);text-transform:uppercase;
+  margin-top:6px;font-weight:600;
+}
+.hero-prog{
+  position:relative;z-index:1;
+  height:3px;background:rgba(255,255,255,0.05);
+  border-radius:3px;overflow:hidden;
+}
+.hero-prog .f{
+  height:100%;background:var(--lime);
+  border-radius:3px;
+  transition:width .6s var(--ease);
+  box-shadow:0 0 12px var(--lime-glow);
+}
+.hero-foot{
+  display:flex;justify-content:space-between;
+  margin-top:12px;font-size:11px;color:var(--t3);
+  letter-spacing:0.04em;text-transform:uppercase;font-weight:500;
+}
+.hero-foot .right{color:var(--t2)}
+
+/* LEGEND BLOCK (info at top) */
+.legend{
+  background:var(--c1);
+  border-radius:var(--r);
+  padding:22px 24px;margin-bottom:18px;
+  box-shadow:0 8px 24px -16px rgba(0,0,0,0.5);
+}
+.legend-h{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:18px;
+}
+.legend-h .t{
+  font-family:'Oswald',sans-serif;font-weight:500;font-size:18px;
+  letter-spacing:0.04em;color:var(--t1);
+}
+.legend-h .h{
+  font-size:10px;letter-spacing:0.2em;
+  color:var(--t3);text-transform:uppercase;font-weight:600;
+}
+.legend-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:14px 18px;
+}
+.lg-item{}
+.lg-pill{
+  display:inline-block;
+  padding:5px 11px;border-radius:99px;
+  background:var(--c3);
+  font-family:'JetBrains Mono';font-weight:500;
+  font-size:11px;color:var(--lime);
+  letter-spacing:0.02em;margin-bottom:7px;
+}
+.lg-d{font-size:12px;color:var(--t1);line-height:1.5;font-weight:500}
+.lg-e{font-size:11px;color:var(--t2);line-height:1.5;margin-top:3px}
+
+/* EXERCISE */
+.ex{
+  background:var(--c1);
+  border-radius:var(--r);
+  margin-bottom:14px;overflow:hidden;
+  transition:background .35s var(--ease), opacity .35s var(--ease);
+  box-shadow:0 1px 0 rgba(255,255,255,0.03) inset, 0 8px 24px -16px rgba(0,0,0,0.5);
+}
+.ex.cur{
+  background:linear-gradient(180deg,var(--c2),var(--c1));
+  box-shadow:
+    0 0 0 1px rgba(201,245,59,0.22),
+    0 0 60px -10px var(--lime-glow),
+    0 16px 40px -16px rgba(0,0,0,0.7);
+}
+.ex.done{opacity:0.45}
+.ex-head{padding:24px 26px 20px;cursor:pointer;transition:transform .18s var(--ease)}
+.ex-head:active{transform:scale(0.99)}
+.ex-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.ex-num{font-family:'JetBrains Mono';font-size:11px;color:var(--t3);letter-spacing:0.06em}
+.ex.cur .ex-num{color:var(--lime)}
+.ex-status{display:flex;align-items:center;gap:7px;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase}
+.ex-status.s-done{color:var(--lime)}
+.ex-status.s-prog{color:var(--blue)}
+.ex-status.s-cur{color:var(--lime)}
+.ex-status .pip{width:5px;height:5px;border-radius:50%;background:currentColor}
+.ex-name{
+  font-family:'Oswald',sans-serif;font-weight:500;font-size:26px;
+  letter-spacing:0.01em;color:var(--t1);
+  line-height:1;margin-bottom:6px;
+}
+.ex-sub{font-size:13px;color:var(--t2);font-weight:400;line-height:1.45}
+.ex-mu{font-size:12px;color:var(--t3);margin-top:5px;line-height:1.45}
+
+/* SPEC ROW (current only) */
+.ex-spec{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:0;margin-top:20px;padding-top:20px;
+  border-top:1px solid var(--line);
+}
+.ex-spec > div{
+  padding:0 16px;border-right:1px solid var(--line);
+}
+.ex-spec > div:first-child{padding-left:0}
+.ex-spec > div:last-child{border-right:none;padding-right:0}
+.ex-spec .l{
+  font-size:9px;font-weight:600;letter-spacing:0.2em;
+  color:var(--t3);text-transform:uppercase;margin-bottom:6px;
+}
+.ex-spec .v{font-family:'Oswald',sans-serif;font-weight:500;font-size:22px;color:var(--t1);letter-spacing:0.01em;line-height:1}
+
+/* REST DUO — between sets / between exercises */
+.rest-duo{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;
+  margin-top:14px;
+}
+.rest-cell{
+  background:var(--c2);
+  border-radius:14px;
+  padding:14px 16px;
+}
+.rest-cell .lbl{
+  font-size:9px;font-weight:600;letter-spacing:0.18em;
+  color:var(--t3);text-transform:uppercase;margin-bottom:6px;
+  display:flex;align-items:center;gap:6px;
+}
+.rest-cell .lbl::before{
+  content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);
+}
+.rest-cell.alt .lbl::before{background:var(--lime)}
+.rest-cell .v{
+  font-family:'Oswald',sans-serif;font-weight:500;font-size:22px;
+  color:var(--t1);letter-spacing:0.01em;line-height:1;
+}
+.rest-cell .v em{font-style:normal;font-size:12px;color:var(--t2);margin-left:3px;font-weight:400}
+
+/* BODY (current only) */
+.ex-body{padding:0 26px 22px;display:none}
+.ex.cur .ex-body{display:block}
+
+/* SETS */
+.sets-block{margin-top:22px}
+.sets-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.sets-h .lbl{font-size:10px;font-weight:600;letter-spacing:0.2em;color:var(--t3);text-transform:uppercase}
+.sets-h .cnt{font-family:'JetBrains Mono';font-size:12px;color:var(--t2)}
+.sets-h .cnt em{color:var(--lime);font-style:normal;font-weight:500}
+.sets{display:flex;gap:10px;flex-wrap:wrap}
+.set{
+  flex:1;min-width:54px;height:62px;
+  border-radius:16px;background:var(--c3);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Oswald',sans-serif;font-weight:500;font-size:22px;
+  color:var(--t2);cursor:pointer;
+  border:none;outline:none;
+  transition:all .22s var(--ease);
+  -webkit-appearance:none;letter-spacing:0.02em;
+}
+.set:active{transform:scale(0.96)}
+.set.done{background:var(--lime);color:#0e0e12;box-shadow:0 12px 28px -10px var(--lime-glow)}
+.set.fail{background:var(--red-soft);color:var(--red);box-shadow:inset 0 0 0 1px rgba(255,107,107,0.3)}
+
+/* REPS */
+.nums{margin-top:18px}
+.num{
+  background:var(--c2);
+  border-radius:16px;padding:16px 18px 14px;
+}
+.num .l{font-size:9px;font-weight:600;letter-spacing:0.2em;color:var(--t3);text-transform:uppercase;margin-bottom:6px}
+.num .row{display:flex;align-items:center;justify-content:space-between}
+.num .v{font-family:'Oswald',sans-serif;font-weight:500;font-size:34px;color:var(--t1);flex:1;text-align:center;line-height:1;letter-spacing:0.01em}
+.nbtn{
+  width:34px;height:34px;border-radius:50%;
+  background:var(--c3);border:none;outline:none;
+  font-size:18px;line-height:1;color:var(--t1);
+  cursor:pointer;flex-shrink:0;
+  -webkit-appearance:none;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .18s var(--ease), background .18s var(--ease);
+}
+.nbtn:hover{background:#2c2c38}
+.nbtn:active{background:var(--lime);color:#0e0e12;transform:scale(0.92)}
+
+.tech{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:18px;font-size:12px;color:var(--blue);
+  text-decoration:none;font-weight:500;letter-spacing:0.01em;
+  transition:opacity .2s;
+}
+.tech .ic{
+  width:24px;height:24px;border-radius:50%;
+  background:var(--blue-soft);
+  display:flex;align-items:center;justify-content:center;
+  font-size:9px;color:var(--blue);
+}
+.tech:hover{opacity:0.8}
+
+/* Collapsed (non-current) exercises */
+.ex:not(.cur) .ex-head{padding:18px 26px}
+.ex:not(.cur) .ex-name{font-size:20px}
+.ex:not(.cur) .ex-sub{font-size:12px}
+.ex:not(.cur) .ex-mu{display:none}
+.ex:not(.cur) .ex-spec{display:none}
+
+/* SECTION */
+.section{
+  background:var(--c1);
+  border-radius:var(--r);
+  padding:24px 26px;margin-bottom:14px;
+  box-shadow:0 8px 24px -16px rgba(0,0,0,0.5);
+}
+.feel{display:flex;gap:8px}
+.fb{
+  flex:1;padding:16px 4px 14px;
+  border-radius:14px;background:var(--c2);
+  border:none;outline:none;cursor:pointer;
+  transition:all .22s var(--ease);text-align:center;
+  -webkit-appearance:none;
+}
+.fb:active{transform:scale(0.96)}
+.fb.on{background:var(--lime-soft);box-shadow:inset 0 0 0 1px rgba(201,245,59,0.35)}
+.fi{font-size:22px;display:block;line-height:1}
+.fl{font-size:9px;font-weight:600;letter-spacing:0.14em;color:var(--t3);text-transform:uppercase;margin-top:7px}
+.fb.on .fl{color:var(--lime)}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  padding:11px 18px;border-radius:99px;
+  background:var(--c2);font-size:13px;color:var(--t2);
+  cursor:pointer;border:none;outline:none;
+  -webkit-appearance:none;
+  transition:all .22s var(--ease);font-weight:500;
+}
+.chip:active{transform:scale(0.96)}
+.chip.on{background:var(--lime);color:#0e0e12;box-shadow:0 8px 22px -8px var(--lime-glow)}
+
+textarea{
+  width:100%;background:transparent;
+  border:none;outline:none;color:var(--t1);
+  font-family:inherit;font-size:14px;line-height:1.6;
+  resize:none;padding:0;
+}
+textarea::placeholder{color:var(--t4)}
+
+/* WEEK */
+.kpi{
+  background:var(--c1);
+  border-radius:var(--r);
+  padding:26px 28px 24px;margin-bottom:14px;
+  box-shadow:0 8px 24px -16px rgba(0,0,0,0.5);
+  position:relative;overflow:hidden;
+}
+.kpi::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(120% 100% at 100% 0%, rgba(201,245,59,0.05), transparent 60%);
+  pointer-events:none;
+}
+.kpi .l{font-size:10px;font-weight:600;letter-spacing:0.22em;color:var(--t3);text-transform:uppercase;margin-bottom:12px;position:relative}
+.kpi .v{font-family:'Oswald',sans-serif;font-weight:500;font-size:80px;color:var(--lime);line-height:0.85;letter-spacing:0;position:relative}
+.kpi .v em{font-style:normal;color:var(--t2);font-size:24px;font-weight:400;margin-left:6px}
+.kpi .s{font-size:12px;color:var(--t2);margin-top:12px;font-weight:500;position:relative}
+
+/* SUMMARY */
+.summary{
+  background:var(--c1);
+  border-radius:var(--r);
+  padding:24px 26px;margin-bottom:14px;
+  box-shadow:0 8px 24px -16px rgba(0,0,0,0.5);
+}
+.sum-row{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:14px 0;border-bottom:1px solid var(--line);
+}
+.sum-row:first-child{padding-top:0}
+.sum-row:last-child{border-bottom:none;padding-bottom:0}
+.sum-bullet{
+  width:24px;height:24px;border-radius:50%;
+  background:var(--c2);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Oswald',sans-serif;font-weight:500;font-size:12px;
+  color:var(--lime);flex-shrink:0;
+  letter-spacing:0;
+}
+.sum-bullet.s-blue{color:var(--blue)}
+.sum-bullet.s-red{color:var(--red)}
+.sum-text{font-size:13px;color:var(--t1);line-height:1.55;font-weight:500}
+.sum-text em{font-style:normal;color:var(--lime);font-weight:600}
+.sum-text .b{color:var(--blue);font-weight:600}
+.sum-sub{font-size:11px;color:var(--t2);margin-top:3px;line-height:1.5}
+
+.daylist{
+  background:var(--c1);
+  border-radius:var(--r);
+  padding:6px 26px;margin-bottom:14px;
+  box-shadow:0 8px 24px -16px rgba(0,0,0,0.5);
+}
+.dayrow{
+  display:flex;align-items:center;gap:16px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+  transition:transform .2s var(--ease);
+}
+.dayrow:active{transform:scale(0.99)}
+.dayrow:last-child{border-bottom:none}
+.day-ic{
+  width:36px;height:36px;border-radius:12px;
+  background:var(--c2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;
+  font-family:'Oswald',sans-serif;font-weight:500;
+}
+.day-ic.s-done{background:var(--lime-soft);color:var(--lime)}
+.day-ic.s-prog{background:var(--blue-soft);color:var(--blue)}
+.day-info{flex:1;min-width:0}
+.day-n{font-family:'Oswald',sans-serif;font-weight:500;font-size:18px;color:var(--t1);margin-bottom:3px;letter-spacing:0.01em}
+.day-s{font-size:11px;color:var(--t3);font-weight:500}
+.day-pct{font-family:'Oswald',sans-serif;font-weight:500;font-size:26px;color:var(--t1);letter-spacing:0;line-height:1}
+.day-pct em{font-style:normal;font-size:12px;color:var(--t3);margin-left:2px;font-weight:400}
+
+/* SLIDERS */
+.sl{margin-bottom:20px}
+.sl:last-child{margin-bottom:0}
+.slh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.sln{font-size:13px;color:var(--t1);font-weight:500}
+.slv{font-family:'Oswald',sans-serif;font-weight:500;font-size:24px;color:var(--lime);letter-spacing:0;line-height:1}
+.slv em{font-style:normal;color:var(--t3);font-size:12px;margin-left:2px;font-weight:400}
+input[type=range]{width:100%;-webkit-appearance:none;height:3px;background:var(--c3);border-radius:2px;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--lime);cursor:pointer;box-shadow:0 0 0 4px rgba(201,245,59,0.15)}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--lime);cursor:pointer;border:none;box-shadow:0 0 0 4px rgba(201,245,59,0.15)}
+
+/* COACH NOTES */
+.coach{
+  background:var(--c1);
+  border-radius:var(--r);
+  padding:24px 26px 22px;margin-bottom:14px;
+  box-shadow:0 8px 24px -16px rgba(0,0,0,0.5);
+  position:relative;overflow:hidden;
+}
+.coach-h{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:18px;
+}
+.coach-av{
+  width:32px;height:32px;border-radius:50%;
+  background:linear-gradient(135deg,#22222d,#16161e);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Oswald',sans-serif;font-weight:500;font-size:14px;color:var(--lime);
+  box-shadow:inset 0 0 0 1px rgba(201,245,59,0.3);
+}
+.coach-name{font-family:'Oswald',sans-serif;font-weight:500;font-size:18px;color:var(--t1);letter-spacing:0.02em;line-height:1}
+.coach-role{font-size:10px;letter-spacing:0.2em;color:var(--t3);text-transform:uppercase;font-weight:600;margin-top:3px}
+.coach-note{
+  padding:14px 0;
+  border-top:1px solid var(--line);
+}
+.coach-note:first-of-type{padding-top:4px;border-top:none}
+.coach-note:last-child{padding-bottom:0}
+.coach-t{
+  font-size:11px;font-weight:600;
+  letter-spacing:0.18em;color:var(--lime);
+  text-transform:uppercase;margin-bottom:8px;
+  display:flex;align-items:center;gap:8px;
+}
+.coach-t.b{color:var(--blue)}
+.coach-t.r{color:var(--red)}
+.coach-t::before{content:'';width:14px;height:1px;background:currentColor}
+.coach-d{font-size:13px;color:var(--t1);line-height:1.6;font-weight:400}
+
+/* BUTTONS */
+.btn-primary{
+  width:100%;padding:18px;
+  background:var(--lime);color:#0e0e12;
+  border:none;border-radius:var(--r);
+  font-family:'Oswald',sans-serif;font-weight:500;font-size:18px;
+  letter-spacing:0.06em;cursor:pointer;
+  margin-top:14px;text-transform:uppercase;
+  -webkit-appearance:none;outline:none;
+  transition:transform .18s var(--ease), box-shadow .18s var(--ease);
+  box-shadow:0 14px 36px -12px var(--lime-glow);
+}
+.btn-primary:hover{box-shadow:0 18px 44px -12px var(--lime-glow)}
+.btn-primary:active{transform:scale(0.98);box-shadow:0 6px 18px -8px var(--lime-glow)}
+.btn-secondary{
+  width:100%;padding:16px;
+  background:var(--c1);color:var(--t1);
+  border:none;border-radius:var(--r);
+  font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;
+  cursor:pointer;margin-top:10px;
+  -webkit-appearance:none;outline:none;
+  transition:transform .18s var(--ease), background .18s var(--ease);
+}
+.btn-secondary:hover{background:var(--c2)}
+.btn-secondary:active{transform:scale(0.98)}
+.btn-ghost{
+  width:100%;padding:14px;background:transparent;
+  color:var(--t2);border:none;font-size:12px;
+  cursor:pointer;margin-top:4px;letter-spacing:0.04em;text-transform:uppercase;font-weight:500;
+  -webkit-appearance:none;outline:none;
+}
+.btn-tg, .btn-wa{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  flex:1;padding:16px;color:#fff;border:none;border-radius:var(--r);
+  font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;
+  cursor:pointer;text-decoration:none;
+  -webkit-appearance:none;outline:none;
+  transition:transform .18s var(--ease);
+}
+.btn-tg{background:var(--blue)}
+.btn-wa{background:var(--lime);color:#0e0e12}
+.btn-tg:active,.btn-wa:active{transform:scale(0.98)}
+.send-r{display:flex;gap:10px;margin-top:12px}
+
+/* REST TIMER */
+.tov{
+  position:absolute;inset:0;
+  background:rgba(14,14,18,0.94);
+  backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
+  z-index:999;display:flex;align-items:center;justify-content:center;
+  padding:0 24px;animation:fadeIn .3s var(--ease-out);
+}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.tbox{
+  width:100%;max-width:340px;
+  background:linear-gradient(180deg,var(--c2),var(--c1));
+  border-radius:28px;padding:36px 32px 30px;text-align:center;
+  box-shadow:0 0 0 1px var(--line-2),0 40px 80px -20px rgba(0,0,0,0.8);
+  position:relative;overflow:hidden;
+}
+.tbox::before{
+  content:'';position:absolute;top:-30%;left:-20%;
+  width:140%;height:60%;
+  background:radial-gradient(50% 50% at 50% 50%, var(--lime-glow), transparent 70%);
+  pointer-events:none;
+}
+.tlbl{font-size:10px;letter-spacing:0.22em;color:var(--lime);text-transform:uppercase;font-weight:600;position:relative}
+.tex{font-family:'Oswald',sans-serif;font-weight:500;font-size:22px;color:var(--t1);letter-spacing:0.02em;margin:8px 0 28px;position:relative}
+.tring{width:200px;height:200px;margin:0 auto 24px;position:relative}
+.tring svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.tring circle{fill:none;stroke-width:2.5}
+.tbg{stroke:var(--line)}
+.tarc{stroke:var(--lime);stroke-linecap:round;transition:stroke-dashoffset 1s linear;filter:drop-shadow(0 0 10px var(--lime-glow))}
+.tinn{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.tnum{font-family:'Oswald',sans-serif;font-weight:500;font-size:84px;color:var(--t1);letter-spacing:0;line-height:1}
+.tunit{font-size:10px;letter-spacing:0.22em;color:var(--t3);text-transform:uppercase;margin-top:4px}
+.tmsg{font-size:13px;color:var(--t2);margin-bottom:22px;font-weight:500;position:relative;min-height:18px}
+.tsnd-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:20px;position:relative}
+.tsnd-lbl{font-size:11px;color:var(--t3);letter-spacing:0.06em}
+.tsnd-tog{width:38px;height:22px;background:var(--c3);border-radius:11px;cursor:pointer;position:relative;transition:background .25s}
+.tsnd-tog.on{background:var(--lime)}
+.tsnd-tog::after{content:'';position:absolute;width:16px;height:16px;border-radius:50%;background:#fff;top:3px;left:3px;transition:left .25s}
+.tsnd-tog.on::after{left:19px;background:#0e0e12}
+.tskip{
+  padding:12px 28px;background:var(--c3);
+  border:none;border-radius:99px;
+  font-size:11px;font-weight:600;color:var(--t2);
+  cursor:pointer;letter-spacing:0.1em;text-transform:uppercase;
+  -webkit-appearance:none;outline:none;position:relative;
+  transition:transform .18s var(--ease);
+}
+.tskip:active{transform:scale(0.96)}
+
+/* INFO PAGE */
+.info-card{
+  background:var(--c1);border-radius:var(--r);
+  padding:26px;margin-bottom:12px;
+  box-shadow:0 8px 24px -16px rgba(0,0,0,0.5);
+}
+.info-h{font-family:'Oswald',sans-serif;font-weight:500;font-size:18px;color:var(--lime);letter-spacing:0.04em;margin-bottom:18px}
+.info-row{display:flex;gap:18px;padding:14px 0;border-bottom:1px solid var(--line)}
+.info-row:first-of-type{padding-top:0}
+.info-row:last-child{border-bottom:none;padding-bottom:0}
+.info-k{font-family:'JetBrains Mono';font-weight:500;font-size:13px;color:var(--lime);min-width:64px;flex-shrink:0}
+.info-v{flex:1}
+.info-d{font-size:13px;color:var(--t1);line-height:1.55;font-weight:500}
+.info-e{font-size:11px;color:var(--t2);margin-top:4px;line-height:1.5}
+
+/* REPORT */
+.rep-h{text-align:center;padding:40px 24px 30px;position:relative}
+.rep-ic{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--lime-soft);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;color:var(--lime);font-size:28px;
+  box-shadow:0 0 0 1px rgba(201,245,59,0.25),0 0 60px -10px var(--lime-glow);
+}
+.rep-t{font-family:'Oswald',sans-serif;font-weight:500;font-size:30px;color:var(--t1);letter-spacing:0.02em}
+.rep-s{font-size:11px;color:var(--t3);margin-top:6px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500}
+.rep-body{padding:0 14px}
+.rbox{
+  background:var(--c1);border-radius:var(--r);padding:22px;
+  font-family:'JetBrains Mono';font-size:11px;line-height:1.85;
+  color:var(--t2);white-space:pre-wrap;
+  max-height:36vh;overflow-y:auto;-webkit-overflow-scrolling:touch;
+}
+.cmsg{text-align:center;font-size:12px;color:var(--lime);margin-top:10px;height:18px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+
+/* TRAINER */
+.tc{
+  background:var(--c1);border-radius:var(--r);
+  padding:24px 26px;margin-bottom:12px;
+  box-shadow:0 8px 24px -16px rgba(0,0,0,0.5);
+}
+.tt{font-family:'Oswald',sans-serif;font-weight:500;font-size:22px;color:var(--t1);letter-spacing:0.02em;margin-bottom:16px}
+.ts{display:flex;gap:10px;margin-bottom:16px}
+.tsb{flex:1;background:var(--c2);border-radius:14px;padding:14px 12px 12px;text-align:center}
+.tsv{font-family:'Oswald',sans-serif;font-weight:500;font-size:26px;color:var(--t1);letter-spacing:0;line-height:1}
+.tsv.acc{color:var(--lime)}
+.tsl{font-size:9px;font-weight:600;letter-spacing:0.18em;color:var(--t3);text-transform:uppercase;margin-top:7px}
+.ter{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}
+.ter:last-child{border-bottom:none}
+.ten{color:var(--t2);flex:1}
+.tev{font-family:'Oswald',sans-serif;font-weight:500;font-size:15px;color:var(--t1);margin-left:8px;letter-spacing:0.02em}
+.t-warn{margin-top:12px;font-size:12px;color:var(--red);display:flex;align-items:center;gap:8px;font-weight:500}
+.t-warn::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--red)}
+.t-note{margin-top:10px;font-size:12px;color:var(--t2);font-style:italic;line-height:1.55}
+
+/* Week progress ring */
+.week-ring-wrap{display:flex;align-items:center;gap:4px;margin-left:auto}
+.week-ring .week-ring-bg{stroke:rgba(255,255,255,0.1)}
+.week-ring .week-ring-fill{stroke:var(--lime);transition:stroke-dashoffset 1s}
+.week-ring-txt{font-family:'Oswald',sans-serif;font-size:11px;fill:var(--lime);font-weight:600}
+.week-ring-sub{font-size:9px;color:var(--t3);line-height:1}
+
+/* Send buttons small */
+.send-r-day{display:flex;gap:8px;margin-top:0}
+.btn-tg-sm{flex:1;padding:11px;background:#229ED9;color:#fff;border:none;border-radius:12px;font-size:13px;font-weight:600;cursor:pointer;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:5px}
+.btn-wa-sm{flex:1;padding:11px;background:#25D366;color:#fff;border:none;border-radius:12px;font-size:13px;font-weight:600;cursor:pointer;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:5px}
+
+/* Scroll to top button */
+.scroll-top-btn{position:fixed;bottom:80px;right:16px;width:40px;height:40px;border-radius:50%;background:var(--c3);border:1px solid var(--line-2);color:var(--t1);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:100;box-shadow:0 4px 16px rgba(0,0,0,0.4)}
+
+/* hdr-meta fix for ring */
+.hdr-meta{display:flex;align-items:center;gap:8px;flex-wrap:nowrap}
+
+/* nums grid - 2 columns when weight present */
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.nums .num:only-child{grid-column:1/-1}
+
+/* Tabs scrollable + drag on desktop */
+.tabs{cursor:grab;user-select:none;-webkit-user-select:none}
+.tabs:active{cursor:grabbing}
+.tabs{scrollbar-width:none;-ms-overflow-style:none}
+.tabs::-webkit-scrollbar{display:none}
+
+/* Exercise collapse indicator */
+.ex-head{cursor:pointer;user-select:none}
+
+/* Sticky tabs on scroll */
+.tabs{position:sticky;top:0;z-index:10;background:var(--bg,#0e0e12)}
+
+/* Sticky hero block - disabled */
+.sticky-hero{}
+
+/* Tip overlay transition */
+#tip-overlay{transition:opacity 0.2s;opacity:0}
+#tip-overlay[style*="flex"]{opacity:1}
+
+/* Tabs sticky */
+.tabs{position:sticky;top:0;z-index:10;background:var(--bg,#0e0e12)}
+
+/* Enhanced splash animation */
+.splash{
+  position:absolute;inset:0;z-index:50;
+  background:var(--bg,#0e0e12);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:28px;
+  transition:opacity 0.8s cubic-bezier(.22,.8,.22,1);
+}
+.splash.hide{opacity:0;pointer-events:none}
+.splash-logo{
+  display:flex;align-items:center;gap:10px;
+  animation:sp-fade 0.7s ease 0.2s both;
+}
+.splash-av{
+  width:40px;height:40px;border-radius:50%;
+  background:linear-gradient(135deg,#22222d,#16161e);
+  border:1px solid rgba(201,245,59,0.3);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Oswald',sans-serif;font-weight:600;font-size:18px;
+  color:#c9f53b;
+}
+.splash-brand-lbl{
+  font-size:10px;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(255,255,255,0.35);
+}
+.splash-center{
+  text-align:center;
+  animation:sp-up 0.8s cubic-bezier(.22,.8,.22,1) 0.4s both;
+}
+.splash-title{
+  font-family:'Oswald',sans-serif;font-weight:500;
+  font-size:32px;color:#f0f0f0;line-height:1.1;margin-bottom:10px;
+}
+.splash-title em{color:#c9f53b;font-style:normal}
+.splash-meta{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  font-size:13px;color:rgba(255,255,255,0.45);
+}
+.splash-week{
+  background:rgba(201,245,59,0.1);border:1px solid rgba(201,245,59,0.25);
+  color:#c9f53b;padding:3px 10px;border-radius:20px;font-size:12px;
+}
+.splash-dot-sep{color:rgba(255,255,255,0.2)}
+.splash-ring-wrap{
+  animation:sp-up 0.8s cubic-bezier(.22,.8,.22,1) 0.6s both;
+}
+.splash-arc{
+  animation:sp-draw 2s cubic-bezier(.4,0,.2,1) 0.8s both;
+  stroke-dashoffset:301;
+}
+@keyframes sp-draw{
+  0%{stroke-dashoffset:301}
+  70%{stroke-dashoffset:75}
+  100%{stroke-dashoffset:75}
+}
+.splash-dots{
+  display:flex;gap:7px;
+  animation:sp-fade 0.5s ease 1.2s both;
+}
+.splash-dots span{
+  width:7px;height:7px;border-radius:50%;
+  background:#c9f53b;opacity:0.25;
+}
+.splash-dots span:nth-child(1){animation:sp-dot 1.4s ease 1.4s infinite}
+.splash-dots span:nth-child(2){animation:sp-dot 1.4s ease 1.6s infinite}
+.splash-dots span:nth-child(3){animation:sp-dot 1.4s ease 1.8s infinite}
+@keyframes sp-dot{0%,80%,100%{opacity:0.25;transform:scale(1)}40%{opacity:1;transform:scale(1.4)}}
+@keyframes sp-fade{0%{opacity:0}100%{opacity:1}}
+@keyframes sp-up{0%{opacity:0;transform:translateY(16px)}100%{opacity:1;transform:none}}
+
+/* Header actions wrap */
+.hdr-actions-wrap{display:flex;align-items:center;gap:10px}
+
+/* Heart button */
+.hdr-heart{
+  width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(255,80,100,0.18),rgba(255,40,80,0.08));
+  border:1px solid rgba(255,80,100,0.35);
+  display:flex;align-items:center;justify-content:center;
+  color:#ff5575;cursor:pointer;
+  animation:heart-pulse 1.6s ease-in-out infinite;
+  transition:transform 0.2s;
+  padding:0;
+}
+.hdr-heart:hover{transform:scale(1.05)}
+.hdr-heart:active{transform:scale(0.95)}
+@keyframes heart-pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(255,80,100,0.45)}
+  50%{box-shadow:0 0 0 10px rgba(255,80,100,0)}
+}
+
+/* Bigger eye button */
+.hdr-eye{
+  width:42px !important;height:42px !important;
+  font-size:20px !important;
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,0.12) !important;
+  background:rgba(255,255,255,0.05) !important;
+  color:#f0f0f0;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  padding:0;
+  transition:transform 0.2s;
+}
+.hdr-eye:hover{transform:scale(1.05)}
+
+/* Love modal */
+.love-overlay{
+  position:fixed;inset:0;z-index:600;
+  background:rgba(0,0,0,0.85);
+  display:none;align-items:center;justify-content:center;
+  padding:20px;
+  animation:fade-in 0.3s ease;
+}
+.love-overlay.show{display:flex}
+.love-box{
+  background:linear-gradient(160deg,#1a1622,#0f0d15);
+  border:1px solid rgba(255,80,100,0.3);
+  border-radius:24px;
+  padding:32px 24px 24px;
+  max-width:380px;width:100%;
+  text-align:center;
+  position:relative;
+  box-shadow:0 24px 80px rgba(255,80,100,0.25);
+  animation:love-pop 0.5s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes love-pop{
+  0%{opacity:0;transform:scale(0.85) translateY(20px)}
+  100%{opacity:1;transform:scale(1) translateY(0)}
+}
+@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
+.love-heart-big{
+  font-size:56px;color:#ff5575;
+  margin-bottom:14px;
+  animation:love-beat 1.4s ease-in-out infinite;
+  display:inline-block;
+}
+@keyframes love-beat{0%,100%{transform:scale(1)}25%{transform:scale(1.15)}50%{transform:scale(1)}75%{transform:scale(1.1)}}
+.love-from{
+  font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);margin-bottom:12px;
+}
+.love-title{
+  font-family:'Oswald',sans-serif;font-weight:500;
+  font-size:24px;color:#fff;margin-bottom:18px;line-height:1.2;
+}
+.love-msg{
+  font-size:14px;line-height:1.7;color:#d0d0e0;
+  margin-bottom:8px;
+}
+.love-msg em{color:#ff8095;font-style:normal;font-weight:600}
+.love-sign{
+  margin-top:20px;padding-top:16px;
+  border-top:1px solid rgba(255,255,255,0.08);
+  font-size:12px;color:rgba(255,255,255,0.5);
+  font-style:italic;
+}
+.love-close{
+  margin-top:20px;
+  background:linear-gradient(135deg,#ff5575,#ff7090);
+  color:#fff;border:none;
+  padding:13px 28px;border-radius:14px;
+  font-size:14px;font-weight:600;cursor:pointer;
+  width:100%;
+}
+
+/* Rest timers - clickable */
+.rest-clickable{cursor:pointer;transition:all 0.2s}
+.rest-clickable:hover{background:rgba(201,245,59,0.06)}
+.rest-clickable:active{transform:scale(0.98)}
+
+/* Note send button */
+.btn-note-tg{
+  width:100%;padding:11px;
+  background:linear-gradient(135deg,#1a7fc4,#229ED9);
+  color:#fff;border:none;border-radius:12px;
+  font-size:13px;font-weight:600;cursor:pointer;
+  margin-top:8px;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.btn-note-tg:active{transform:scale(0.98)}
+.note-cmsg{text-align:center;font-size:12px;color:#22c55e;height:18px;margin-top:4px;font-weight:500}
+
+/* Clickable rest cells */
+.rest-clickable{
+  cursor:pointer;
+  transition:all 0.15s;
+  position:relative;
+}
+.rest-clickable:hover{
+  background:rgba(201,245,59,0.06);
+  border-radius:10px;
+}
+.rest-clickable:active{
+  transform:scale(0.97);
+}
+.rest-clickable .lbl{
+  color:var(--lime,#c9f53b) !important;
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="app" id="app">
+  <div class="splash" id="splash">
+    <div class="splash-logo">
+      <div class="splash-av">S</div>
+      <div class="splash-brand-lbl">Personal Coaching</div>
+    </div>
+    <div class="splash-center">
+      <div class="splash-title">Щоденник <em>Юлі</em></div>
+      <div class="splash-meta">
+        <span class="splash-week">Тиждень 8</span>
+        <span class="splash-dot-sep">·</span>
+        <span class="splash-month">Квітень 2026</span>
+      </div>
+    </div>
+    <div class="splash-ring-wrap">
+      <svg viewBox="0 0 110 110" width="110" height="110">
+        <circle cx="55" cy="55" r="48" fill="none" stroke="rgba(201,245,59,0.1)" stroke-width="3"/>
+        <circle class="splash-arc" cx="55" cy="55" r="48" fill="none" stroke="#c9f53b" stroke-width="3" stroke-linecap="round" stroke-dasharray="301" stroke-dashoffset="301" transform="rotate(-90 55 55)"/>
+        <text x="55" y="50" text-anchor="middle" fill="#c9f53b" font-family="Oswald,sans-serif" font-weight="600" font-size="22">8</text>
+        <text x="55" y="68" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Montserrat,sans-serif" font-size="10">з 24</text>
+      </svg>
+    </div>
+    <div class="splash-dots"><span></span><span></span><span></span></div>
+  </div>
+  <div class="hdr">
+    <div class="hdr-row">
+      <div class="hdr-mark-wrap">
+        <div class="hdr-mark">S</div>
+        <div class="hdr-tag">Personal Coaching</div>
+      </div>
+      <div class="hdr-actions-wrap">
+        <button class="hdr-heart" onclick="showLove()" aria-label="Послання від тренера">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </button>
+        <button class="hdr-eye" onclick="sw('week',5)" aria-label="Тижневий звіт">◐</button>
+      </div>
+    </div>
+    <div class="hdr-title">Щоденник <em>Юлі</em></div>
+    <div class="hdr-meta">
+      <span class="wk">Тиждень 8</span>
+      <span class="dot"></span>
+      <span>Квітень 2026</span>
+      <div class="week-ring-wrap" title="Тиждень 8 з 24">
+        <svg class="week-ring" viewBox="0 0 36 36" width="36" height="36">
+          <circle class="week-ring-bg" cx="18" cy="18" r="15" fill="none" stroke-width="2.5"/>
+          <circle class="week-ring-fill" cx="18" cy="18" r="15" fill="none" stroke-width="2.5" stroke-dasharray="94.2" stroke-dashoffset="62.8" transform="rotate(-90 18 18)"/>
+          <text x="18" y="22" text-anchor="middle" class="week-ring-txt">8</text>
+        </svg>
+        <span class="week-ring-sub">з 24</span>
+      </div>
+    </div>
+  </div>
+  <div class="tabs" id="tabs" onmousedown="tabsDrag(event)">
+    <div class="tab" onclick="sw('info',0)">Інфо</div>
+    <div class="tab on" onclick="sw('tue',1)">Вівторок</div>
+    <div class="tab" onclick="sw('thu',2)">Четвер</div>
+    <div class="tab" onclick="sw('fri',3)">П'ятниця</div>
+    <div class="tab" onclick="sw('sun',4)">Неділя</div>
+    <div class="tab" onclick="sw('week',5)">Тиждень</div>
+  </div>
+  <div class="scroll" id="main"></div>
+
+  <div id="tov" class="tov" style="display:none">
+    <div class="tbox">
+      <div class="tlbl">Відпочинок</div>
+      <div class="tex" id="tex"></div>
+      <div class="tring">
+        <svg viewBox="0 0 200 200">
+          <circle class="tbg" cx="100" cy="100" r="92"></circle>
+          <circle class="tarc" id="tarc" cx="100" cy="100" r="92" stroke-dasharray="578" stroke-dashoffset="0"></circle>
+        </svg>
+        <div class="tinn"><div class="tnum" id="tnum">90</div><div class="tunit">секунд</div></div>
+      </div>
+      <div class="tmsg" id="tmsg">Відпочивай</div>
+      <div class="tsnd-row">
+        <span class="tsnd-lbl">Звук</span>
+        <div class="tsnd-tog on" id="snd-tog" onclick="toggleSound()"></div>
+      </div>
+      <button class="tskip" onclick="skipT()">Пропустити</button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div id="tip-overlay" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,0.7);align-items:flex-end;justify-content:center" onclick="hideTip()">
+  <div id="tip-box" style="background:#1c1c26;border-radius:20px 20px 0 0;padding:24px 20px 40px;width:100%;max-width:420px;max-height:75vh;overflow-y:auto" onclick="event.stopPropagation()">
+    <div style="width:36px;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;margin:0 auto 20px"></div>
+    <div id="tip-content"></div>
+    <button onclick="hideTip()" style="margin-top:20px;width:100%;padding:14px;background:rgba(255,255,255,0.08);border:none;border-radius:12px;color:#f0f0f0;font-size:14px;cursor:pointer">Зрозуміло</button>
+  </div>
+</div>
+
+
+<div class="love-overlay" id="love-overlay" onclick="hideLove()">
+  <div class="love-box" onclick="event.stopPropagation()">
+    <div class="love-heart-big">♥</div>
+    
+    <div class="love-title">Юлю, моя кохана</div>
+    <div class="love-msg">
+      Кожне твоє тренування — це не просто фізична робота. Це <em>сила</em>, <em>дисципліна</em> і <em>любов до себе</em>.
+    </div>
+    <div class="love-msg" style="margin-top:12px">
+      Я бачу як ти ростеш — і не лише в залі. Ти стаєш сильнішою кожного дня. Я поруч, я підтримую тебе, я вірю в тебе.
+    </div>
+    <div class="love-msg" style="margin-top:12px">
+      Не зупиняйся, навіть коли важко. Я завжди буду твоєю опорою — і як тренер, і як <em>твоя людина</em>.
+    </div>
+    <div class="love-sign">З любов'ю, твій Лев ♥</div>
+    
+  </div>
+</div>
+<button id="scroll-top-global" onclick="document.getElementById('main').scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:28px;right:16px;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#1a1a2e,#252540);border:1px solid rgba(201,245,59,0.35);color:#c9f53b;font-size:20px;cursor:pointer;align-items:center;justify-content:center;z-index:200;box-shadow:0 4px 20px rgba(0,0,0,0.6),0 0 12px rgba(201,245,59,0.15);transition:all 0.2s">↑</button>
+
+<script>
+var W=8;
+var soundOn=true;
+var S={d:{},wk:{en:7,sl:7,st:5,mu:5,mood:''},cur:'tue',rt:'',focus:{}};
+
+var EX={
+tue:[
+{n:1,ua:'Підтягування',ru:'Assisted Pull-up · Гравітрон',mu:'Широчайші, біцепс, задня дельта',s:3,r:'6-8',ri:'1-2',tm:'2-0-2',rs:90,rbe:120,yt:'https://www.youtube.com/results?search_query=assisted+pull+up+proper+form'},
+{n:2,ua:'Жим гантелей лежачи',ru:'Dumbbell Chest Press',mu:'Грудні, передня дельта, трицепс',s:3,r:'8-10',ri:'1-2',tm:'2-0-2',rs:90,rbe:120,yt:'https://www.youtube.com/results?search_query=dumbbell+chest+press'},
+{n:3,ua:'Тяга однією рукою',ru:'Single Arm Row',mu:'Широчайші, ромбоподібні',s:3,r:'10',ri:'1-2',tm:'2-0-2',rs:75,rbe:90,yt:'https://www.youtube.com/results?search_query=single+arm+dumbbell+row'},
+{n:4,ua:'Зворотні розведення',ru:'Reverse Pec Deck',mu:'Задня дельта, верх спини',s:3,r:'12-14',ri:'1-2',tm:'2-0-2',rs:60,rbe:90,yt:'https://www.youtube.com/results?search_query=reverse+pec+deck'},
+{n:5,ua:'Розведення в кросовері',ru:'Cable Lateral Raise',mu:'Середня дельта',s:3,r:'12-15',ri:'1-2',tm:'2-0-2',rs:60,rbe:90,yt:'https://www.youtube.com/results?search_query=cable+lateral+raise'},
+{n:6,ua:'Підйом колін у висі',ru:'Hanging Knee Raise',mu:'Прес',s:2,r:'12',ri:'2-3',tm:'2-0-2',rs:45,rbe:60,yt:'https://www.youtube.com/results?search_query=hanging+knee+raise'},
+{n:7,ua:'Планка',ru:'Plank',mu:'Кор, стабілізація',s:2,r:'45-60 сек',ri:'2-3',tm:'—',rs:45,rbe:60,yt:'https://www.youtube.com/results?search_query=plank+exercise+proper+form'}
+],
+thu:[
+{n:1,ua:'Румунська тяга',ru:'Romanian Deadlift',mu:'Сідниці, задня поверхня стегна',s:4,r:'8-10',ri:'1-2',tm:'2-1-2',rs:90,rbe:120,yt:'https://www.youtube.com/results?search_query=romanian+deadlift+proper+form'},
+{n:2,ua:'Тяга стегна',ru:'Hip Thrust',mu:'Сідниці — головний акцент',s:4,r:'10-12',ri:'1-2',tm:'2-1-2',rs:75,rbe:120,yt:'https://www.youtube.com/results?search_query=hip+thrust+proper+form'},
+{n:3,ua:'Жим ногами',ru:'Leg Press висока постановка',mu:'Сідниці + задня поверхня стегна',s:3,r:'10-12',ri:'1-2',tm:'2-0-2',rs:75,rbe:90,yt:'https://www.youtube.com/results?search_query=leg+press+proper+form'},
+{n:4,ua:'Відведення ноги назад',ru:'Cable Kickback',mu:'Сідниці — ізоляція',s:3,r:'12-15',ri:'1-2',tm:'2-0-2',rs:60,rbe:90,yt:'https://www.youtube.com/results?search_query=cable+kickback'},
+{n:5,ua:'Згинання ніг',ru:'Leg Curl',mu:'Задня поверхня стегна',s:3,r:'12',ri:'1-2',tm:'2-0-2',rs:60,rbe:90,yt:'https://www.youtube.com/results?search_query=leg+curl'},
+{n:6,ua:'Спуск зі степа',ru:'Step-down',mu:'Стабілізатори коліна',s:2,r:'8',ri:'2',tm:'3-0-2',rs:60,rbe:90,yt:'https://www.youtube.com/results?search_query=step+down+exercise'}
+],
+fri:[
+{n:1,ua:'Тяга блоку згори',ru:'Lat Pulldown',mu:'Широчайші, біцепс',s:3,r:'8-10',ri:'1-2',tm:'2-0-2',rs:90,rbe:120,yt:'https://www.youtube.com/results?search_query=lat+pulldown+proper+form'},
+{n:2,ua:'Жим Арнольда',ru:'Arnold Press',mu:'Передня + середня дельта',s:3,r:'10',ri:'1-2',tm:'2-0-2',rs:90,rbe:120,yt:'https://www.youtube.com/results?search_query=arnold+press'},
+{n:3,ua:'Тяга сидячи',ru:'Seated Row',mu:'Спина, ромбоподібні',s:3,r:'10',ri:'1-2',tm:'2-0-2',rs:90,rbe:120,yt:'https://www.youtube.com/results?search_query=seated+row+machine+proper+form'},
+{n:4,ua:'Тяга до обличчя',ru:'Face Pull',mu:'Задня дельта, верх спини',s:3,r:'12',ri:'1-2',tm:'2-0-2',rs:60,rbe:90,yt:'https://www.youtube.com/results?search_query=face+pull+proper+form'},
+{n:5,ua:'Підйом гантелей',ru:'Lateral Raise',mu:'Середня дельта',s:3,r:'12-15',ri:'1-2',tm:'2-0-2',rs:60,rbe:90,yt:'https://www.youtube.com/results?search_query=dumbbell+lateral+raise'},
+{n:6,ua:'Мертвий жук',ru:'Dead Bug',mu:'Глибокі мязи кору',s:2,r:'12',ri:'2-3',tm:'2-0-2',rs:45,rbe:60,yt:'https://www.youtube.com/results?search_query=dead+bug+exercise'},
+{n:7,ua:'Планка',ru:'Plank',mu:'Кор, стабілізація',s:2,r:'45-60 сек',ri:'2-3',tm:'—',rs:45,rbe:60,yt:'https://www.youtube.com/results?search_query=plank+exercise+proper+form'}
+],
+sun:[{n:1,ua:'Теніс',ru:'Tennis',mu:'Кардіо, координація',s:1,r:'60 хв',ri:'—',tm:'—',rs:0,rbe:0,yt:''}]
+};
+var DN={
+  tue:{ua:'Верх тіла',full:'Вівторок · Верх тіла'},
+  thu:{ua:'Ноги · Сідниці',full:'Четвер · Ноги · Сідниці'},
+  fri:{ua:'Верх тіла',full:'П\'ятниця · Верх тіла'},
+  sun:{ua:'Теніс',full:'Неділя · Теніс'}
+};
+
+function save(){try{localStorage.setItem('y8v5',JSON.stringify({d:S.d,wk:S.wk,focus:S.focus}));}catch(e){}}
+function load(){try{var r=localStorage.getItem('y8v5');if(r){var p=JSON.parse(r);if(p.d)S.d=p.d;if(p.wk)S.wk=p.wk;if(p.focus)S.focus=p.focus;}}catch(e){}}
+function iDay(day){
+  if(S.d[day])return;
+  var ex=EX[day]||[];
+  var o={feel:'',pain:'Немає',painNote:'',note:'',sets:{},reps:{},wkg:{}};
+  ex.forEach(function(e,i){o.sets[i]=[];for(var s=0;s<e.s;s++)o.sets[i].push('');o.reps[i]=e.r;o.wkg[i]=0;});
+  S.d[day]=o;
+}
+
+function focusedIdx(day){
+  if(S.focus[day]!==undefined && S.focus[day]!==null)return S.focus[day];
+  var d=S.d[day],ex=EX[day]||[];
+  for(var i=0;i<ex.length;i++){
+    var sets=d.sets[i]||[];
+    var allDone=sets.length>0 && sets.every(function(s){return s==='done'});
+    if(!allDone)return i;
+  }
+  return 0;
+}
+
+var tI=null,tTot=90,tLeft=90,CIRC=2*Math.PI*92;
+
+function sendNoteQuick(day){
+  iDay(day);
+  var d=S.d[day];
+  // Get current textarea value
+  var noteEl=document.getElementById('nt-'+day);
+  var note=noteEl?noteEl.value.trim():(d.note||'').trim();
+  var msg=document.getElementById('note-cmsg-'+day);
+  
+  if(!note){
+    if(msg){msg.textContent='⚠️ Спочатку напиши нотатку';setTimeout(function(){msg.textContent='';},2500);}
+    return;
+  }
+  
+  // Build simple note text - ONLY the note, no exercises
+  var dn=DN[day];
+  var txt='📝 Нотатка від Юлі\n';
+  txt+='📅 '+today()+' · '+dn.full+'\n\n';
+  txt+=note;
+  
+  var channelUrl='https://t.me/c/3584573683/1';
+  var isIOS=/iPhone|iPad|iPod/i.test(navigator.userAgent);
+  var isAndroid=/Android/i.test(navigator.userAgent);
+  
+  function openTg(){
+    var tgDeep='tg://msg?text='+encodeURIComponent(txt);
+    var tgShare='https://t.me/share/url?url=&text='+encodeURIComponent(txt);
+    if(msg){
+      msg.textContent='✅ Відкриваю Telegram — вибери чат і відправ';
+      setTimeout(function(){msg.textContent='';},4000);
+    }
+    // window.open keeps diary open, Telegram opens in new window/app
+    window.open(tgDeep,'_blank');
+    setTimeout(function(){window.open(tgShare,'_blank');},600);
+  }
+  
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(openTg).catch(function(){
+      var ta=document.createElement('textarea');ta.value=txt;ta.style.cssText='position:fixed;opacity:0;top:0';
+      document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');}catch(e){}
+      document.body.removeChild(ta);openTg();
+    });
+  } else {
+    var ta=document.createElement('textarea');ta.value=txt;ta.style.cssText='position:fixed;opacity:0;top:0';
+    document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');}catch(e){}
+    document.body.removeChild(ta);openTg();
+  }
+}
+
+
+function startRestTimer(secs, exName, type){
+  // Wrapper to use existing timer with custom label
+  startT(secs, exName + ' · ' + type);
+}
+function playBeep(){
+  if(!soundOn)return;
+  try{
+    var ctx=new(window.AudioContext||window.webkitAudioContext)();
+    var osc=ctx.createOscillator(),gain=ctx.createGain();
+    osc.connect(gain);gain.connect(ctx.destination);
+    osc.frequency.value=880;
+    gain.gain.setValueAtTime(0.4,ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.5);
+    osc.start(ctx.currentTime);osc.stop(ctx.currentTime+0.5);
+    setTimeout(function(){
+      var osc2=ctx.createOscillator(),gain2=ctx.createGain();
+      osc2.connect(gain2);gain2.connect(ctx.destination);
+      osc2.frequency.value=1100;
+      gain2.gain.setValueAtTime(0.4,ctx.currentTime);
+      gain2.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.6);
+      osc2.start(ctx.currentTime);osc2.stop(ctx.currentTime+0.6);
+    },400);
+  }catch(e){}
+}
+
+function toggleSound(){soundOn=!soundOn;document.getElementById('snd-tog').classList.toggle('on',soundOn);}
+
+function startT(secs,name){
+  tTot=secs;tLeft=secs;
+  document.getElementById('tex').textContent=name;
+  document.getElementById('tov').style.display='flex';
+  document.getElementById('snd-tog').classList.toggle('on',soundOn);
+  updT();
+  if(tI)clearInterval(tI);
+  tI=setInterval(function(){
+    tLeft--;updT();
+    if(tLeft<=0){
+      clearInterval(tI);
+      document.getElementById('tnum').textContent='✓';
+      document.getElementById('tmsg').textContent='Готово · наступний підхід';
+      playBeep();
+      try{if(navigator.vibrate)navigator.vibrate([200,100,200,100,400]);}catch(e){}
+      setTimeout(function(){document.getElementById('tov').style.display='none';},2000);
+    }
+  },1000);
+}
+
+function updT(){
+  document.getElementById('tnum').textContent=tLeft;
+  var off=CIRC-(CIRC*(tLeft/tTot));
+  document.getElementById('tarc').style.strokeDashoffset=off;
+  document.getElementById('tmsg').textContent=tLeft>tTot*.6?'Відпочивай':tLeft>tTot*.3?'Майже готова':'Ще трохи';
+}
+function skipT(){if(tI)clearInterval(tI);document.getElementById('tov').style.display='none';}
+function today(){var d=new Date();return d.getDate()+'.'+(d.getMonth()+1)+'.'+d.getFullYear();}
+
+function sw(day,idx){
+  document.querySelectorAll('.tab').forEach(function(t,i){t.classList.toggle('on',i===idx);});
+  S.cur=day;
+  document.getElementById('main').scrollTop=0;
+  if(day==='week')rWeek();
+  else if(day==='info')rInfo();
+  else rDay(day);
+}
+function goT(){rTrainer();document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on');});}
+function goWeek(){sw('week',5);}
+
+function dayProgress(day){
+  iDay(day);
+  var d=S.d[day],ex=EX[day]||[];
+  var tot=0,done=0,exTot=ex.length,exDone=0;
+  ex.forEach(function(e,i){
+    if(d.sets[i]){
+      var allDone=d.sets[i].length>0&&d.sets[i].every(function(s){return s==='done';});
+      if(allDone)exDone++;
+      d.sets[i].forEach(function(s){tot++;if(s==='done')done++;});
+    }
+  });
+  return {tot:tot,done:done,pct:tot>0?Math.round(done/tot*100):0,exDone:exDone,exTot:exTot};
+}
+
+/* COACH NOTES per day */
+var COACH_NOTES={
+tue:[
+{t:'ФОКУС',cls:'',d:'Сьогодні акцент на спині та грудних. Контролюй опускання — негативна фаза будує найбільше м\'язів.'},
+{t:'ТЕХНІКА',cls:'b',d:'У підтягуваннях не розгойдуйся — рух йде через лопатки, не через інерцію. Лікті веди донизу-назад.'},
+{t:'ПОПЕРЕДЖЕННЯ',cls:'r',d:'Якщо плечі круглять вперед — зменшуй вагу. Краще менше з ідеальною формою, ніж більше з компенсаціями.'}
+],
+thu:[
+{t:'ФОКУС',cls:'',d:'Ягідичний день. Hip Thrust — головна вправа: 1 секунда паузи вгорі обов\'язкова, без неї ефекту немає.'},
+{t:'ТЕХНІКА',cls:'b',d:'У румунській тязі коліна злегка зігнуті й фіксовані. Рух — це нахил тазу, а не присідання.'},
+{t:'ПОПЕРЕДЖЕННЯ',cls:'r',d:'Зверни увагу на коліно у Step-down. Якщо вилітає вперед від носка — стоп, поправ техніку.'}
+],
+fri:[
+{t:'ФОКУС',cls:'',d:'Повторний верх: цього разу акцент на дельтах. Lateral Raise — повільно, без рывків, до рівня плечей.'},
+{t:'ТЕХНІКА',cls:'b',d:'У Face Pull лікті високо — на рівні плечей. Це працює задня дельта, а не середина спини.'},
+{t:'ПОПЕРЕДЖЕННЯ',cls:'r',d:'Не переходь у компенсацію трапецією. Якщо плечі піднімаються — вага завелика.'}
+],
+sun:[
+{t:'ФОКУС',cls:'',d:'Активне відновлення. Теніс розвиває координацію, кардіо й рухову свободу — приймай як гру, не як тренування.'},
+{t:'ПОРАДА',cls:'b',d:'Розминка перед грою: 5 хв легкого бігу + 10 динамічних обертів плечима та стегнами.'}
+]
+};
+
+function legendBlock(){
+  var h='<div class="legend">';
+  h+='<div class="legend-h"><div class="t">Як читати програму</div><div class="h">Легенда</div></div>';
+  h+='<div class="legend-grid">';
+  h+='<div class="lg-item"><div class="lg-pill">RIR</div><div class="lg-d">Запас повторів</div><div class="lg-e">RIR 2 — міг би ще 2 рази</div></div>';
+  h+='<div class="lg-item"><div class="lg-pill">2-0-2</div><div class="lg-d">Темп виконання</div><div class="lg-e">опускання · пауза · підйом</div></div>';
+  h+='<div class="lg-item"><div class="lg-pill">3×8-10</div><div class="lg-d">Підходи × повтори</div><div class="lg-e">3 підходи, 8-10 разів</div></div>';
+  h+='<div class="lg-item"><div class="lg-pill">↻ 90с</div><div class="lg-d">Відпочинок</div><div class="lg-e">між підходами та вправами</div></div>';
+  h+='</div></div>';
+  return h;
+}
+
+function rDay(day){
+  iDay(day);
+  var d=S.d[day],ex=EX[day]||[],dn=DN[day];
+  var p=dayProgress(day);
+  var fIdx=focusedIdx(day);
+  var curEx=ex[fIdx];
+
+  /* Hero */
+  var h='<div class="hero" id="day-hero">';
+  h+='<div class="hero-row">';
+  h+='<div class="hero-l"><div class="hero-eyb">Сьогодні</div><div class="hero-name">'+dn.full+'</div></div>';
+  h+='<div class="hero-stat">';
+  h+='<div class="v" style="font-size:28px;font-weight:700;color:var(--lime)">'+p.done+'<em style="font-size:16px;color:var(--t2);font-weight:400">/'+p.tot+'</em></div>';
+  h+='<div class="l">Підходів</div>';
+  h+='<div class="v" style="font-size:22px;font-weight:700;color:#f0f0ff;margin-top:8px">'+(p.exDone||0)+'<em style="font-size:14px;color:var(--t2);font-weight:400">/'+(p.exTot||0)+'</em></div>';
+  h+='<div class="l">Вправ</div>';
+  h+='</div>';
+  h+='</div>';
+  h+='<div class="hero-prog"><div class="f" style="width:'+p.pct+'%"></div></div>';
+  h+='<div class="hero-foot"><span style="font-size:15px;font-weight:700;color:var(--lime)">'+p.pct+'%</span><span style="color:var(--t2)"> завершено</span><span class="right">'+(curEx?'Далі · '+curEx.ua:'Готово')+'</span></div>';
+  h+='</div>';
+
+  /* Exercises */
+  ex.forEach(function(e,i){
+    var sets=d.sets[i]||[];
+    var doneCt=sets.filter(function(s){return s==='done';}).length;
+    var allDone=doneCt===sets.length&&sets.length>0;
+    var anyDone=doneCt>0;
+    var isCur=i===fIdx;
+
+    var statusEl='';
+    if(allDone) statusEl='<div class="ex-status s-done"><span class="pip"></span>Виконано</div>';
+    else if(anyDone) statusEl='<div class="ex-status s-prog"><span class="pip"></span>В процесі · '+doneCt+'/'+sets.length+'</div>';
+    else if(isCur) statusEl='<div class="ex-status s-cur"><span class="pip"></span>Поточна</div>';
+
+    var cls='ex'+(isCur?' cur':'')+(allDone?' done':'');
+    h+='<div class="'+cls+'" id="exb-'+day+'-'+i+'">';
+    h+='<div class="ex-head" onclick="toggleEx(\''+day+'\','+i+')">';
+    h+='<div class="ex-meta">';
+    h+='<span class="ex-num">'+String(e.n).padStart(2,'0')+' / '+String(ex.length).padStart(2,'0')+'</span>';
+    if(isCur){var colIc=(S.collapsed&&S.collapsed[day+'-'+i])?'▶':'▼';h+='<span style="font-size:9px;color:var(--t3);margin-left:auto;padding-right:4px">'+colIc+'</span>';}
+    h+=statusEl;
+    h+='</div>';
+    h+='<div class="ex-name">'+e.ua+'</div>';
+    h+='<div class="ex-sub">'+e.ru+'</div>';
+    h+='<div class="ex-mu">'+e.mu+'</div>';
+
+    if(isCur && !isCollapsed){
+      h+='<div class="ex-spec">';
+      h+='<div onclick="showTip(\'sets\',\''+e.s+'×'+e.r+'\')" style="cursor:pointer"><div class="l">Підходи</div><div class="v" style="text-decoration:underline dotted;text-underline-offset:3px">'+e.s+'×'+e.r+'</div></div>';
+      h+='<div onclick="showTip(\'rir\',\''+e.ri+'\')" style="cursor:pointer"><div class="l">RIR</div><div class="v" style="text-decoration:underline dotted;text-underline-offset:3px">'+e.ri+'</div></div>';
+      h+='<div onclick="showTip(\'tempo\',\''+e.tm+'\')" style="cursor:pointer"><div class="l">Темп</div><div class="v" style="text-decoration:underline dotted;text-underline-offset:3px">'+e.tm+'</div></div>';
+      h+='</div>';
+
+      /* Rest duo — between sets, between exercises — clickable timers */
+      h+='<div class="rest-duo">';
+      if(e.rs>0){
+        h+='<div class="rest-cell rest-clickable" onclick="event.stopPropagation();startRestTimer('+e.rs+',\''+e.ua.replace(/\'/g,'`')+'\',\'між підходами\')"><div class="lbl">▶ Між підходами</div><div class="v">'+e.rs+'<em>сек</em></div></div>';
+      } else {
+        h+='<div class="rest-cell"><div class="lbl">Між підходами</div><div class="v">—</div></div>';
+      }
+      if(e.rbe>0){
+        h+='<div class="rest-cell alt rest-clickable" onclick="event.stopPropagation();startRestTimer('+e.rbe+',\''+e.ua.replace(/\'/g,'`')+'\',\'між вправами\')"><div class="lbl">▶ Між вправами</div><div class="v">'+e.rbe+'<em>сек</em></div></div>';
+      } else {
+        h+='<div class="rest-cell alt"><div class="lbl">Між вправами</div><div class="v">—</div></div>';
+      }
+      h+='</div>';
+    }
+    h+='</div>';
+
+    var isCollapsed=S.collapsed&&S.collapsed[day+'-'+i];
+    if(isCur && !isCollapsed){
+      h+='<div class="ex-body">';
+      h+='<div class="sets-block">';
+      h+='<div class="sets-h"><span class="lbl">Підходи</span><span class="cnt"><em>'+doneCt+'</em>/'+sets.length+' завершено</span></div>';
+      h+='<div class="sets">';
+      for(var s=0;s<e.s;s++){
+        var st=sets[s];
+        var setCls='set'+(st==='done'?' done':st==='fail'?' fail':'');
+        h+='<button class="'+setCls+'" id="sb-'+day+'-'+i+'-'+s+'" onclick="event.stopPropagation();tapS(\''+day+'\','+i+','+s+','+e.rs+',\''+e.ua.replace(/'/g,'`')+'\')">'+(s+1)+'</button>';
+      }
+      h+='</div></div>';
+
+      var rv=typeof d.reps[i]==='number'?d.reps[i]:(parseFloat(d.reps[i])||1);
+      var wv=d.wkg&&d.wkg[i]!==undefined?d.wkg[i]:0;
+      var hasW=(e.s>0&&!['Планка','Підйом колін у висі','Мертвий жук','Спуск зі степа','Теніс'].includes(e.ua));
+      h+='<div class="nums">';
+      if(hasW){
+        h+='<div class="num"><div class="l">Вага (кг)</div><div class="row">';
+        h+='<button class="nbtn" onclick="event.stopPropagation();chW(\''+day+'\','+i+',-1)">−</button>';
+        h+='<div class="v" id="wv-'+day+'-'+i+'">'+wv+'</div>';
+        h+='<button class="nbtn" onclick="event.stopPropagation();chW(\''+day+'\','+i+',1)">+</button>';
+        h+='</div></div>';
+      }
+      h+='<div class="num"><div class="l">'+(e.ua==='Теніс'?'Час (хв)':'Повторень')+'</div><div class="row">';
+      h+='<button class="nbtn" onclick="event.stopPropagation();chV(\'r\',\''+day+'\','+i+',-1)">−</button>';
+      h+='<div class="v" id="rv-'+day+'-'+i+'">'+rv+'</div>';
+      h+='<button class="nbtn" onclick="event.stopPropagation();chV(\'r\',\''+day+'\','+i+',1)">+</button>';
+      h+='</div></div></div>';
+
+      if(e.yt){
+        h+='<a class="tech" href="'+e.yt+'" target="_blank" rel="noopener" onclick="event.stopPropagation()"><span class="ic">▸</span>Перевірити техніку</a>';
+      }
+      h+='</div>';
+    }
+
+    h+='</div>';
+  });
+
+  /* Feel */
+  h+='<div class="eyb">Як почувалась</div>';
+  h+='<div class="section"><div class="feel" id="fl-'+day+'">';
+  [['😴','Погано'],['😕','Так собі'],['😐','Норм'],['🙂','Добре'],['💪','Відмінно']].forEach(function(f){
+    var a=d.feel===f[0]+' '+f[1]?' on':'';
+    h+='<button class="fb'+a+'" onclick="pFeel(\''+day+'\',\''+f[0]+' '+f[1]+'\',this)"><span class="fi">'+f[0]+'</span><span class="fl">'+f[1]+'</span></button>';
+  });
+  h+='</div></div>';
+
+  /* Pain */
+  h+='<div class="eyb">Біль або дискомфорт</div>';
+  h+='<div class="section"><div class="chips">';
+  ['Немає','Коліна','Попереку','Плечі','Інше'].forEach(function(p){
+    h+='<button class="chip'+(d.pain===p?' on':'')+'" onclick="pChip(\''+day+'\',\''+p+'\',this)">'+p+'</button>';
+  });
+  h+='</div>';
+  if(d.pain==='Інше'){
+    h+='<textarea id="pain-note-'+day+'" style="margin-top:10px" rows="2" placeholder="Опиши де і що болить…" oninput="S.d[\''+day+'\'].painNote=this.value;save()">'+( d.painNote||'')+'</textarea>';
+  }
+  h+='</div>';
+
+  /* Notes */
+  h+='<div class="eyb">Нотатки для тренера</div>';
+  h+='<div class="section">';
+  h+='<div style="font-size:12px;color:var(--t3,#5a5a7a);margin-bottom:8px;line-height:1.5">Залиш повідомлення — воно потрапить у тижневий звіт автоматично. Або одразу надішли тренеру кнопкою нижче.</div>';
+  h+='<textarea id="nt-'+day+'" rows="3" placeholder="Запитання, зауваження, побажання..." oninput="S.d[\''+day+'\'].note=this.value;save()">'+d.note+'</textarea>';
+  h+='<button class="btn-note-tg" onclick="sendNoteQuick(\''+day+'\')" style="margin-top:8px">✈ Надіслати нотатку одразу</button>';
+  h+='<div class="note-cmsg" id="note-cmsg-'+day+'"></div>';
+  h+='</div>';
+
+
+
+  /* Send report button */
+
+
+  /* Scroll to top button */
+  h+='<button class="scroll-top-btn" id="scroll-top-btn" onclick="document.getElementById(\'main\').scrollTop=0" style="display:none">↑</button>';
+
+  document.getElementById('main').innerHTML=h;
+  /* Attach global scroll-to-top listener */
+  var mainEl=document.getElementById('main');
+  var gBtn=document.getElementById('scroll-top-global');
+  mainEl.onscroll=function(){
+    if(gBtn)gBtn.style.display=mainEl.scrollTop>300?'flex':'none';
+  };
+}
+
+function copyDayReport(day){
+  var txt=buildDayText(day);
+  var msg=document.getElementById('day-cmsg-'+day);
+  function ok(){if(msg)msg.textContent='✅ Скопійовано!';setTimeout(function(){if(msg)msg.textContent='';},2500);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok).catch(function(){fb2(txt,ok);});}else fb2(txt,ok);
+}
+function sendDayReport(day){
+  var txt=buildDayText(day);
+  // Try Telegram app first, fallback to web
+  var tgApp='tg://msg?text='+encodeURIComponent(txt);
+  var tgWeb='https://t.me/share/url?url=&text='+encodeURIComponent(txt);
+  var a=document.createElement('a');
+  a.href=tgApp;
+  a.click();
+  // Fallback after 500ms if app not installed
+  setTimeout(function(){
+    var win=window.open(tgWeb,'_blank');
+  },500);
+}
+function sendDayReportWA(day){
+  var txt=buildDayText(day);
+  var wa='https://wa.me/?text='+encodeURIComponent(txt);
+  window.open(wa,'_blank');
+}
+function buildDayText(day){
+  iDay(day);
+  var d=S.d[day],ex=EX[day]||[],dn=DN[day];
+  var p=dayProgress(day);
+  var dnParts=dn.full.split(' — ');
+  var t='🏋️ ЗВІТ ПІСЛЯ ТРЕНУВАННЯ\n';
+  t+='━━━━━━━━━━━━━━━━━\n';
+  t+='📅 '+today()+'\n';
+  t+='📋 '+dn.full+'\n\n';
+  t+='✅ ВПРАВИ:\n';
+  ex.forEach(function(e,i){
+    var sets=d.sets[i]||[];
+    var dn2=sets.filter(function(s){return s==='done';}).length;
+    var allDone=sets.length>0&&dn2===sets.length;
+    var mark=allDone?'✅':dn2>0?'⚡':'⬜';
+    t+=mark+' '+e.ua+(e.ru?' ('+e.ru+')':'')+'\n';
+    var line='   Підходи: '+dn2+'/'+sets.length;
+    if(d.wkg&&d.wkg[i]&&d.wkg[i]>0)line+=' | '+d.wkg[i]+' кг';
+    line+=' | '+e.r+(e.ua==='Теніс'?' хв':' повт');
+    t+=line+'\n';
+  });
+  t+='\n';
+  if(d.feel)t+='💪 Самопочуття: '+d.feel+'\n';
+  if(d.rir!==null&&d.rir!==undefined&&d.rir!=='')t+='🎯 RIR: '+d.rir+'\n';
+  if(d.pain&&d.pain!=='Немає'){
+    t+='🔴 Біль: '+d.pain;
+    if(d.painNote)t+=' — '+d.painNote;
+    t+='\n';
+  }
+  if(d.note){
+    t+='📝 Нотатки:\n'+d.note+'\n';
+  }
+  t+='━━━━━━━━━━━━━━━━━\n';
+  t+='Щоденник Юлі · Тиждень '+W;
+  return t;
+}
+
+function toggleEx(day,i){
+  if(!S.collapsed)S.collapsed={};
+  var key=day+'-'+i;
+  
+  if(S.focus[day]===i){
+    // Already current - toggle collapse
+    S.collapsed[key]=!S.collapsed[key];
+    save();rDay(day);
+  } else {
+    // New exercise - expand it, set as focus
+    S.collapsed[key]=false;
+    S.focus[day]=i;
+    save();rDay(day);
+    setTimeout(function(){
+      var el=document.getElementById('exb-'+day+'-'+i);
+      if(el)el.scrollIntoView({behavior:'smooth',block:'nearest'});
+    },60);
+  }
+}
+
+function setFocus(day,i){
+  if(S.focus[day]===i)return;
+  S.focus[day]=i;save();rDay(day);
+}
+
+function tapS(day,i,s,rs,name){
+  var d=S.d[day];
+  var cur=d.sets[i][s];
+  var nxt=cur===''?'done':cur==='done'?'fail':'';
+  d.sets[i][s]=nxt;save();
+  var allDone=d.sets[i].every(function(x){return x==='done';});
+  if(allDone){
+    var ex=EX[day]||[];
+    for(var j=i+1;j<ex.length;j++){
+      var sj=d.sets[j]||[];
+      if(!sj.length || !sj.every(function(x){return x==='done'})){S.focus[day]=j;save();break;}
+    }
+  }
+  if(nxt==='done'&&rs>0)startT(rs,name);
+  try{if(navigator.vibrate)navigator.vibrate(nxt==='done'?[40]:nxt==='fail'?[80,40,80]:[20]);}catch(e){}
+  rDay(day);
+}
+
+function chV(tp,day,i,delta){
+  var d=S.d[day];
+  var c=typeof d.reps[i]==='number'?d.reps[i]:(parseFloat(d.reps[i])||1);
+  d.reps[i]=Math.max(1,c+delta);
+  var el=document.getElementById('rv-'+day+'-'+i);if(el)el.textContent=d.reps[i];
+  save();
+}
+function chW(day,i,delta){
+  var d=S.d[day];
+  if(!d.wkg)d.wkg={};
+  var c=d.wkg[i]||0;
+  d.wkg[i]=Math.max(0,Math.round(c+delta));
+  var el=document.getElementById('wv-'+day+'-'+i);
+  if(el)el.textContent=d.wkg[i];
+  save();
+}
+function pFeel(day,val,el){S.d[day].feel=val;document.getElementById('fl-'+day).querySelectorAll('.fb').forEach(function(b){b.classList.remove('on');});el.classList.add('on');save();}
+function pChip(day,val,el){
+  S.d[day].pain=val;
+  el.parentNode.querySelectorAll('.chip').forEach(function(c){c.classList.remove('on');});
+  el.classList.add('on');save();
+  // Re-render pain section to show/hide textarea
+  rDay(day);
+}
+
+/* WEEK */
+function buildSummary(days){
+  var trainings=days.filter(function(d){return d!=='sun'});
+  var trainedCt=0,totSets=0,doneSets=0,bestPct=0,bestDay=null;
+  trainings.forEach(function(day){
+    var p=dayProgress(day);
+    totSets+=p.tot;doneSets+=p.done;
+    if(p.pct>=50)trainedCt++;
+    if(p.pct>bestPct){bestPct=p.pct;bestDay=day;}
+  });
+  var overallPct=totSets>0?Math.round(doneSets/totSets*100):0;
+
+  var rows=[];
+  /* Trainings count */
+  rows.push({n:'1',cls:'',html:'Виконано <em>'+trainedCt+'/'+trainings.length+'</em> тренувань цього тижня',sub:doneSets+' з '+totSets+' підходів завершено'});
+
+  /* Trend */
+  var trend='Прогрес стабільний';
+  var sub='Тримай ритм, не пропускай тренування';
+  if(overallPct>=85){trend='Відмінний тиждень';sub='Можна збільшити навантаження на наступному циклі';}
+  else if(overallPct>=60){trend='Прогрес впевнений';sub='Збережи якість — результат накопичується';}
+  else if(overallPct>0){trend='Тиждень незавершений';sub='Поверни ритм — навіть коротка сесія краще ніж пропуск';}
+  else{trend='Тиждень ще не почався';sub='Перший підхід — найважчий. Почни з вівторка';}
+  rows.push({n:'2',cls:'s-blue',html:trend,sub:sub});
+
+  /* Self-state */
+  var avgWell=Math.round((S.wk.en+S.wk.sl)/2);
+  var stateText,stateSub;
+  if(avgWell>=8){stateText='Енергія на високому рівні';stateSub='Все підтримує прогрес — сон, відновлення, настрій';}
+  else if(avgWell>=6){stateText='Стабільне самопочуття';stateSub='Слідкуй за сном — він напряму впливає на результат';}
+  else{stateText='Низька енергія';stateSub='Подумай про пріоритет відновлення цього тижня';}
+  rows.push({n:'3',cls:S.wk.st>=7?'s-red':'',html:stateText,sub:stateSub});
+
+  return rows;
+}
+
+function rWeek(){
+  var days=['tue','thu','fri','sun'];
+  var totAll=0,doneAll=0;
+  days.forEach(function(day){var p=dayProgress(day);totAll+=p.tot;doneAll+=p.done;});
+  var pctAll=totAll>0?Math.round(doneAll/totAll*100):0;
+
+  var h='';
+  /* KPI */
+  h+='<div class="kpi"><div class="l">Виконано цього тижня</div><div class="v">'+pctAll+'<em>%</em></div><div class="s">'+doneAll+' з '+totAll+' підходів</div></div>';
+
+  /* Summary */
+  h+='<div class="eyb">Тижневий висновок</div>';
+  h+='<div class="summary">';
+  buildSummary(days).forEach(function(r){
+    h+='<div class="sum-row"><div class="sum-bullet '+r.cls+'">'+r.n+'</div><div><div class="sum-text">'+r.html+'</div><div class="sum-sub">'+r.sub+'</div></div></div>';
+  });
+  h+='</div>';
+
+  /* Days */
+  h+='<div class="eyb">Тренування тижня</div>';
+  h+='<div class="daylist">';
+  days.forEach(function(day){
+    var p=dayProgress(day);
+    var d=S.d[day]||{},dn=DN[day];
+    var cls=p.pct>=80?'s-done':p.pct>0?'s-prog':'';
+    var ic=p.pct>=80?'✓':p.pct>0?'~':'·';
+    h+='<div class="dayrow"><div class="day-ic '+cls+'">'+ic+'</div>';
+    h+='<div class="day-info"><div class="day-n">'+dn.full+'</div>';
+    h+='<div class="day-s">'+p.done+'/'+p.tot+' підходів'+(d.feel?' · '+d.feel:'')+'</div></div>';
+    h+='<div class="day-pct">'+p.pct+'<em>%</em></div></div>';
+  });
+  h+='</div>';
+
+  /* Sliders */
+  h+='<div class="eyb">Самопочуття</div>';
+  h+='<div class="section">';
+  [['en','Енергія'],['sl','Сон'],['st','Стрес'],['mu','Втома']].forEach(function(r){
+    h+='<div class="sl"><div class="slh"><span class="sln">'+r[1]+'</span><span class="slv" id="'+r[0]+'-v">'+S.wk[r[0]]+'<em>/10</em></span></div><input type="range" min="1" max="10" step="1" value="'+S.wk[r[0]]+'" oninput="S.wk[\''+r[0]+'\']=+this.value;document.getElementById(\''+r[0]+'-v\').innerHTML=this.value+\'<em>/10</em>\';save()"></div>';
+  });
+  h+='</div>';
+
+  /* Mood */
+  h+='<div class="eyb">Настрій тижня</div>';
+  h+='<div class="section"><div class="feel" id="mood-r">';
+  [['😞','Погано'],['😕','Так собі'],['😐','Норм'],['🙂','Добре'],['😄','Чудово']].forEach(function(f){
+    var a=S.wk.mood===f[0]+' '+f[1]?' on':'';
+    h+='<button class="fb'+a+'" onclick="pMood(\''+f[0]+' '+f[1]+'\',this)"><span class="fi">'+f[0]+'</span><span class="fl">'+f[1]+'</span></button>';
+  });
+  h+='</div></div>';
+
+
+
+  h+='<div class="eyb" style="margin-top:8px">Надіслати звіт тренеру</div>';
+  h+='<div class="send-r-day"><a class="btn-tg-sm" href="javascript:void(0)" onclick="genWTg()" style="flex:2">✈ Надіслати в Telegram</a><a class="btn-tg-sm" href="javascript:void(0)" onclick="doCopyW()" style="flex:1;background:rgba(255,255,255,0.07);color:var(--t2)">📋 Копіювати</a></div>';
+  
+  h+='<div class="cmsg" id="week-cmsg"></div>';
+
+  /* Scroll to top */
+  h+='<button class="scroll-top-btn" id="scroll-top-btn-w" onclick="document.getElementById(\'main\').scrollTop=0" style="display:none">↑</button>';
+  document.getElementById('main').innerHTML=h;
+  var mainEl=document.getElementById('main');
+  var gBtn=document.getElementById('scroll-top-global');
+  mainEl.onscroll=function(){
+    if(gBtn)gBtn.style.display=mainEl.scrollTop>300?'flex':'none';
+  };
+}
+function genWTg(){
+  var txt=buildWeekText();
+  var msg=document.getElementById('week-cmsg');
+  var tgDeep='tg://msg?text='+encodeURIComponent(txt);
+  var tgShare='https://t.me/share/url?url=&text='+encodeURIComponent(txt);
+
+  if(msg){
+    msg.textContent='✅ Відкриваю Telegram — вибери чат і відправ';
+    setTimeout(function(){msg.textContent='';},4000);
+  }
+  // Always use window.open - user stays in diary, Telegram opens separately
+  window.open(tgDeep,'_blank');
+  setTimeout(function(){window.open(tgShare,'_blank');},600);
+}
+
+function doCopyW(){
+  var txt=buildWeekText();
+  var msg=document.getElementById('week-cmsg');
+  function ok(){if(msg)msg.textContent='Скопійовано';setTimeout(function(){if(msg)msg.textContent='';},2500);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok).catch(function(){fb2(txt,ok);});}else fb2(txt,ok);
+}
+function buildWeekText(){
+  var days=['tue','thu','fri','sun'];
+  var t='📊 ТИЖНЕВИЙ ЗВІТ — ЮЛЯ\n';
+  t+='━━━━━━━━━━━━━━━━━\n';
+  t+='📅 '+today()+'\n';
+  t+='📋 Тиждень '+W+' · Квітень 2026\n\n';
+  
+  days.forEach(function(day){
+    iDay(day);
+    var d=S.d[day],ex=EX[day]||[],dn=DN[day];
+    var p=dayProgress(day);
+    if(p.done===0&&!d.feel&&!d.note&&(!d.pain||d.pain==='Немає'))return;
+    
+    t+=dn.ic+' '+dn.full+'\n';
+    t+='Виконано: '+p.exDone+'/'+p.exTot+' вправ · '+p.done+'/'+p.tot+' підходів ('+p.pct+'%)\n\n';
+    t+='✅ ВПРАВИ:\n';
+    
+    ex.forEach(function(e,i){
+      var sets=d.sets[i]||[];
+      var dn2=sets.filter(function(s){return s==='done';}).length;
+      var hasFails=sets.some(function(s){return s==='fail';});
+      var allDone=sets.length>0&&dn2===sets.length;
+      var mark=allDone?'✅':dn2>0?'⚡':'⬜';
+      t+=mark+' '+e.ua+(e.ru?' ('+e.ru+')':'')+'\n';
+      var line='   Підходи: '+dn2+'/'+sets.length;
+      if(d.wkg&&d.wkg[i]&&d.wkg[i]>0)line+=' | '+d.wkg[i]+' кг';
+      line+=' | '+e.r+(e.ua==='Теніс'?' хв':' повт');
+      t+=line+'\n';
+    });
+    
+    t+='\n';
+    if(d.feel)t+='💪 Самопочуття: '+d.feel+'\n';
+    if(d.rir!==null&&d.rir!==undefined&&d.rir!=='')t+='🎯 RIR: '+d.rir+'\n';
+    if(d.pain&&d.pain!=='Немає'){
+      t+='🔴 Біль: '+d.pain;
+      if(d.painNote)t+=' — '+d.painNote;
+      t+='\n';
+    }
+    if(d.note){
+      t+='📝 Нотатки:\n'+d.note+'\n';
+    }
+    t+='\n━━━━━━━━━━━━━━━━━\n\n';
+  });
+  
+  // Week feeling
+  var wk=S.wk;
+  if(wk.en||wk.sl||wk.st||wk.mood){
+    t+='📈 ТИЖДЕНЬ В ЦІЛОМУ:\n';
+    if(wk.en)t+='⚡ Енергія: '+wk.en+'/10\n';
+    if(wk.sl)t+='😴 Сон: '+wk.sl+'/10\n';
+    if(wk.st)t+='🌊 Стрес: '+wk.st+'/10\n';
+    if(wk.mood)t+='😊 Настрій: '+wk.mood+'\n';
+    t+='\n━━━━━━━━━━━━━━━━━\n';
+  }
+  
+  t+='Щоденник Юлі · Тиждень '+W;
+  return t;
+}
+
+function pMood(val,el){S.wk.mood=val;document.getElementById('mood-r').querySelectorAll('.fb').forEach(function(b){b.classList.remove('on');});el.classList.add('on');save();}
+
+function rInfo(){
+  var h='';
+  var blocks=[
+    {t:'RIR · запас повторів',rows:[
+      ['RIR 0','Повна відмова — більше жодного повтору','Максимальне зусилля'],
+      ['RIR 1','Залишився 1 повтор в запасі','Дуже важко, але ще 1 раз міг би'],
+      ['RIR 2','Залишилось 2 повтори в запасі','Важко, але міг би ще 2 рази'],
+      ['RIR 3','Залишилось 3 повтори в запасі','Помірне зусилля']
+    ]},
+    {t:'Темп виконання',rows:[
+      ['2-0-2','2 сек опускання, 0 пауза, 2 сек підйом','Присідання'],
+      ['2-1-2','2 сек опускання, 1 пауза, 2 сек підйом','Hip Thrust'],
+      ['3-0-2','3 сек опускання, 0 пауза, 2 сек підйом','Step-down · контроль коліна']
+    ]},
+    {t:'Відпочинок',rows:[
+      ['Між підх','Час відпочинку після кожного підходу','Таймер запускається автоматично'],
+      ['Між впр','Перед переходом до наступної вправи','90–120 сек для базових']
+    ]},
+    {t:'Підходи · повторення',rows:[
+      ['3×8-10','3 підходи по 8-10 повторень','Базова схема'],
+      ['4×10-12','4 підходи по 10-12 повторень','Hip Thrust — пауза вгорі'],
+      ['Тап','Один → ✓ виконано, ще раз → ✗, ще раз → скинути','']
+    ]},
+    {t:'Дихання',rows:[
+      ['Вдих','Фаза опускання · негативна фаза','Опускаєшся — вдихаєш'],
+      ['Видих','Фаза підйому · позитивна фаза','Піднімаєшся — видихаєш']
+    ]}
+  ];
+  blocks.forEach(function(b){
+    h+='<div class="info-card"><div class="info-h">'+b.t+'</div>';
+    b.rows.forEach(function(r){
+      h+='<div class="info-row"><div class="info-k">'+r[0]+'</div><div class="info-v"><div class="info-d">'+r[1]+'</div>'+(r[2]?'<div class="info-e">'+r[2]+'</div>':'')+'</div></div>';
+    });
+    h+='</div>';
+  });
+  document.getElementById('main').innerHTML=h;
+}
+
+
+
+function fb2(txt,cb){var ta=document.createElement('textarea');ta.value=txt;ta.style.cssText='position:fixed;opacity:0;top:0';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);cb();}
+
+function rTrainer(){
+  var days=['tue','thu','fri','sun'];
+  var h='<div class="eyb">Панель тренера · Тиждень '+W+'</div>';
+  days.forEach(function(day){
+    iDay(day);
+    var d=S.d[day],ex=EX[day]||[],dn=DN[day];
+    var p=dayProgress(day);
+    h+='<div class="tc"><div class="tt">'+dn.full+'</div>';
+    h+='<div class="ts"><div class="tsb"><div class="tsv acc">'+p.pct+'<em style="font-size:11px;color:var(--t3);font-style:normal;font-weight:400;margin-left:1px">%</em></div><div class="tsl">Виконання</div></div>';
+    h+='<div class="tsb"><div class="tsv">'+(d.feel?d.feel.split(' ')[0]:'—')+'</div><div class="tsl">Стан</div></div>';
+    h+='<div class="tsb"><div class="tsv">'+p.done+'<em style="font-size:12px;color:var(--t3);font-style:normal;font-weight:400">/'+p.tot+'</em></div><div class="tsl">Підходів</div></div></div>';
+    ex.forEach(function(e,i){
+      var dn2=d.sets[i]?d.sets[i].filter(function(s){return s==='done';}).length:0;
+      h+='<div class="ter"><span class="ten">'+e.ua+'</span><span class="tev">'+dn2+'/'+e.s+' підходів</span></div>';
+    });
+    if(d.pain&&d.pain!=='Немає')h+='<div class="t-warn">Біль: '+d.pain+'</div>';
+    if(d.note)h+='<div class="t-note">«'+d.note+'»</div>';
+    h+='</div>';
+  });
+  h+='<button class="btn-primary" onclick="genW()">Тижневий звіт</button>';
+  document.getElementById('main').innerHTML=h;
+}
+
+function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+function showTip(type, val){
+  var c='';
+  if(type==='sets'){
+    c='<div style="font-size:16px;font-weight:700;color:#f0f0f0;margin-bottom:16px">Підходи · повторення</div>';
+    c+='<div style="display:flex;flex-direction:column;gap:12px">';
+    c+='<div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:14px">';
+    c+='<div style="font-size:15px;font-weight:700;color:#c9f53b">3×8-10</div>';
+    c+='<div style="font-size:13px;color:#888;margin-top:4px">3 підходи по 8-10 повторень</div>';
+    c+='<div style="font-size:11px;color:#5a5a64;margin-top:2px">Базова схема</div>';
+    c+='</div>';
+    c+='<div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:14px">';
+    c+='<div style="font-size:15px;font-weight:700;color:#c9f53b">4×10-12</div>';
+    c+='<div style="font-size:13px;color:#888;margin-top:4px">4 підходи по 10-12 повторень</div>';
+    c+='<div style="font-size:11px;color:#5a5a64;margin-top:2px">Ягодичні вправи (Hip Thrust, RDL)</div>';
+    c+='</div>';
+    c+='<div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:14px">';
+    c+='<div style="font-size:15px;font-weight:700;color:#c9f53b">2×12</div>';
+    c+='<div style="font-size:13px;color:#888;margin-top:4px">2 підходи по 12 повторень</div>';
+    c+='<div style="font-size:11px;color:#5a5a64;margin-top:2px">Ізоляційні та кор вправи</div>';
+    c+='</div>';
+    c+='<div style="background:rgba(201,245,59,0.08);border:1px solid rgba(201,245,59,0.2);border-radius:12px;padding:14px">';
+    c+='<div style="font-size:12px;color:#c9f53b">💡 Підказка</div>';
+    c+='<div style="font-size:12px;color:#888;margin-top:4px">Один тап на кнопку = ✓ виконано. Другий тап = ✗ не вийшло. Третій = скинути.</div>';
+    c+='</div>';
+    c+='</div>';
+  } else if(type==='rir'){
+    c='<div style="font-size:16px;font-weight:700;color:#f0f0f0;margin-bottom:16px">RIR · запас повторів</div>';
+    c+='<div style="display:flex;flex-direction:column;gap:10px">';
+    [['RIR 0','Повна відмова — більше жодного повтору','Максимальне зусилля','#ff6b6b'],
+     ['RIR 1','Залишився 1 повтор в запасі','Дуже важко, але ще 1 раз міг би','#ffa94d'],
+     ['RIR 2','Залишилось 2 повтори в запасі','Важко, але міг би ще 2 рази','#c9f53b'],
+     ['RIR 3','Залишилось 3 повтори в запасі','Помірне зусилля','#7b8cff']
+    ].forEach(function(r){
+      c+='<div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:14px;border-left:3px solid '+r[3]+'">';
+      c+='<div style="font-size:15px;font-weight:700;color:'+r[3]+'">'+r[0]+'</div>';
+      c+='<div style="font-size:13px;color:#888;margin-top:4px">'+r[1]+'</div>';
+      c+='<div style="font-size:11px;color:#5a5a64;margin-top:2px">'+r[2]+'</div>';
+      c+='</div>';
+    });
+    c+='<div style="background:rgba(201,245,59,0.08);border:1px solid rgba(201,245,59,0.2);border-radius:12px;padding:14px">';
+    c+='<div style="font-size:12px;color:#c9f53b">💡 Зараз у тебе</div>';
+    c+='<div style="font-size:13px;color:#f0f0f0;margin-top:4px;font-weight:600">RIR '+val+' — залишити '+val+' повтор(и) в запасі</div>';
+    c+='</div>';
+    c+='</div>';
+  } else if(type==='tempo'){
+    c='<div style="font-size:16px;font-weight:700;color:#f0f0f0;margin-bottom:16px">Темп виконання</div>';
+    c+='<div style="display:flex;flex-direction:column;gap:10px">';
+    [['2-0-2','2 сек опускання, 0 пауза, 2 сек підйом','Більшість вправ верху тіла'],
+     ['2-1-2','2 сек опускання, 1 сек пауза, 2 сек підйом','Hip Thrust, RDL — пауза вгорі обовязкова'],
+     ['3-0-2','3 сек опускання, 0 пауза, 2 сек підйом','Step-down — повільний контроль коліна'],
+     ['—','Природній темп','Планка, ізометричні вправи']
+    ].forEach(function(r){
+      var isCur=(r[0]===val);
+      c+='<div style="background:'+(isCur?'rgba(201,245,59,0.08)':'rgba(255,255,255,0.05)')+';border-radius:12px;padding:14px'+(isCur?';border:1px solid rgba(201,245,59,0.3)':'')+'">';
+      c+='<div style="font-size:15px;font-weight:700;color:'+(isCur?'#c9f53b':'#f0f0f0')+'">'+r[0]+'</div>';
+      c+='<div style="font-size:13px;color:#888;margin-top:4px">'+r[1]+'</div>';
+      c+='<div style="font-size:11px;color:#5a5a64;margin-top:2px">'+r[2]+'</div>';
+      c+='</div>';
+    });
+    c+='<div style="background:rgba(255,255,255,0.04);border-radius:12px;padding:14px">';
+    c+='<div style="font-size:12px;color:#888">Три цифри: <span style="color:#c9f53b">опускання · пауза · підйом</span> (у секундах)</div>';
+    c+='</div>';
+    c+='</div>';
+  }
+  document.getElementById('tip-content').innerHTML=c;
+  var ov=document.getElementById('tip-overlay');
+  ov.style.display='flex';
+  setTimeout(function(){ov.style.opacity='1';},10);
+}
+function hideTip(){
+  document.getElementById('tip-overlay').style.display='none';
+}
+
+function showLove(){
+  document.getElementById('love-overlay').classList.add('show');
+}
+function hideLove(){
+  document.getElementById('love-overlay').classList.remove('show');
+}
+
+load();
+// No splash - load immediately
+rDay('tue');
+document.querySelectorAll('.tab').forEach(function(t,i){t.classList.toggle('on',i===1);});
+document.getElementById('app').classList.add('ready');
+var sp=document.getElementById('splash');
+if(sp&&sp.parentNode)sp.parentNode.removeChild(sp);
+
+// Global scroll-to-top listener
+var mainScroll=document.getElementById('main');
+var topBtn=document.getElementById('scroll-top-global');
+if(mainScroll&&topBtn){
+  mainScroll.addEventListener('scroll',function(){
+    topBtn.style.display=mainScroll.scrollTop>300?'flex':'none';
+  });
+}
+
+// Tabs horizontal drag scroll
+function tabsDrag(e){
+  var el=document.getElementById('tabs');
+  if(!el)return;
+  var startX=e.pageX;
+  var scrollLeft=el.scrollLeft;
+  var moving=true;
+  document.onmousemove=function(ev){
+    if(!moving)return;
+    var dx=ev.pageX-startX;
+    el.scrollLeft=scrollLeft-dx;
+  };
+  document.onmouseup=function(){moving=false;document.onmousemove=null;document.onmouseup=null;};
+}
+
+// Global scroll-to-top
+(function(){
+  var btn=document.getElementById('scroll-top-global');
+  setInterval(function(){
+    var main=document.getElementById('main');
+    var btn=document.getElementById('scroll-top-global');
+    if(main&&btn)btn.style.display=main.scrollTop>300?'flex':'none';
+  },200);
+})();document.querySelectorAll('.tab').forEach(function(t,i){t.classList.toggle('on',i===0)});
+
+</script>
+
+
+</body></html>
